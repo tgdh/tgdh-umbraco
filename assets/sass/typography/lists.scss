@@ -1,0 +1,38 @@
+/* ===========================================================
+
+	#LISTS
+
+=========================================================== */
+
+li {
+	margin: $line-height / 4 0rem;
+	margin-right: 0;
+	list-style: none;
+
+	&:first-child {
+		margin-top: 0;
+	}
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.page__content li {
+
+	position: relative;
+
+	&:before {
+		content: "";
+		width: .8rem;
+		height: .8rem;
+		border-radius: 50%;
+		background-color: $sec;
+		position: absolute;
+
+		left: -2rem;
+		top: .5em;
+
+	}
+
+}

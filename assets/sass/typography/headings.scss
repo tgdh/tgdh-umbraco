@@ -1,0 +1,172 @@
+/* ===========================================================
+
+	#HEADINGS
+
+=========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+.tera,
+.giga,
+.mega,
+.alpha,
+.beta,
+.gamma,
+.delta {
+	font-weight: 800;
+	line-height: 1.1;
+	color: $grey--3;
+}
+
+h5,
+h6,
+.epsilon,
+.zeta {
+	font-weight: 500;
+}
+
+
+.page-title__header {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	text-align: center;
+
+	.page__title {
+		color: $sec;
+		padding-bottom: 0;
+	}
+}
+
+$zeta--small: 		$font-size--small;
+$epsilon--small: 	$zeta--small		*	$type-scale--small;
+$delta--small: 		$epsilon--small		*	$type-scale--small;
+$gamma--small: 		$delta--small		*	$type-scale--small;
+$beta--small: 		$gamma--small		*	$type-scale--small;
+$alpha--small: 		$beta--small		*	$type-scale--small;
+$mega--small:		$alpha--small		*	$type-scale--small;
+$giga--small:		$mega--small		*	$type-scale--small;
+$tera--small: 		$giga--small		*	$type-scale--small;
+$intro--small: 		$delta--small;
+
+.tera {
+	@include heading-font-size($tera--small);
+}
+
+.giga {
+	@include heading-font-size($giga--small);
+}
+
+.mega {
+	@include heading-font-size($mega--small);
+}
+
+h1,
+.alpha {
+	@include heading-font-size($alpha--small);
+}
+
+h2,
+.beta {
+	@include heading-font-size($beta--small);
+}
+
+h3,
+.gamma {
+	@include heading-font-size($gamma--small);
+}
+
+h4,
+.delta {
+	@include heading-font-size($delta--small);
+}
+
+h5,
+.epsilon {
+	@include heading-font-size($epsilon--small);
+}
+
+h6,
+.zeta {
+	@include heading-font-size($zeta--small);
+}
+
+.intro {
+	font-size: $intro--small;
+	line-height: $line-height;
+	font-weight: 200 !important;
+}
+
+.intro + p {
+	padding-top: 1.5em;
+}
+
+@include respond-min( $mq-medium ) {
+
+	$zeta--large: 		$font-size--large;
+	$epsilon--large: 	$zeta--large		*	$type-scale--large;
+	$delta--large: 		$epsilon--large		*	$type-scale--large;
+	$gamma--large: 		$delta--large		*	$type-scale--large;
+	$beta--large: 		$gamma--large		*	$type-scale--large;
+	$alpha--large: 		$beta--large		*	$type-scale--large;
+	$mega--large:		$alpha--large		*	$type-scale--large;
+	$giga--large:		$mega--large		*	$type-scale--large;
+	$tera--large: 		$giga--large		*	$type-scale--large;
+	$intro--large: 		$delta--large;
+
+	.tera {
+		@include heading-font-size($tera--large);
+	}
+
+	.giga {
+		@include heading-font-size($giga--large);
+	}
+
+	.mega {
+		@include heading-font-size($mega--large);
+	}
+
+	h1,
+	.alpha {
+		@include heading-font-size($alpha--large);
+	}
+
+	h2,
+	.beta {
+		@include heading-font-size($beta--large);
+	}
+
+	h3,
+	.gamma {
+		@include heading-font-size($gamma--large);
+	}
+
+	h4,
+	.delta {
+		@include heading-font-size($delta--large);
+	}
+
+	h5,
+	.epsilon {
+		@include heading-font-size($epsilon--large);
+	}
+
+	h6,
+	.zeta {
+		@include heading-font-size($zeta--large);
+	}
+
+	.intro {
+		font-size: $intro--large;
+	}
+
+	.page-title__header {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+
+		.page__title {
+			padding-bottom: 0;
+		}
+	}
+}

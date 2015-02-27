@@ -1,0 +1,153 @@
+/* ===========================================================
+
+	#FORMS
+
+=========================================================== */
+
+input[type="text"],
+select,
+textarea {
+	background: none;
+/*	border: $border-width solid $border-colour;
+	border-radius: $border-radius;*/
+	margin: 0;
+	padding: 1rem;
+	transition: border $speed ease;
+	width: 100%;
+
+	&:focus {
+		border-color: $pri;
+	}
+}
+
+
+
+/* ===========================================================
+
+	#LABEL
+
+=========================================================== */
+
+label {
+	display: block;
+	padding-top: $line-height;
+	padding-bottom: $line-height / 2;
+
+	&:first-child {
+		padding-top: 0;
+	}
+}
+
+label[for] {
+	cursor: pointer;
+}
+
+
+
+/* ===========================================================
+
+	#SELECT
+
+=========================================================== */
+
+.select-wrap {
+	position: relative;
+}
+
+select {
+	background: none;
+	position: relative;
+	text-indent: 1px;
+	text-overflow: '';
+	z-index: 1;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.select-wrap:after {
+	color: $border-colour;
+	content: '\25BE';
+	padding: 1.2rem 1.5rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+
+
+/* ===========================================================
+
+	#TEXTAREA
+
+=========================================================== */
+
+textarea {
+	resize: none;
+}
+
+
+
+/* ===========================================================
+
+	#RADIO & CHECKBOX
+
+=========================================================== */
+
+input[type="radio"],
+input[type="checkbox"] {
+	width: 2rem;
+	height: 2rem;
+
+	background: $border-colour;
+	color: #fff;
+	cursor: pointer;
+	line-height: 1;
+	vertical-align: middle;
+	transition: background $speed, border $speed;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	&:before {
+		content: '';
+	}
+
+	&:hover {
+		background: $sec;
+	}
+
+	&:checked {
+		background: $pri;
+
+		&:before {
+			content: '\2713';
+		}
+	}
+}
+
+input[type="radio"] {
+	border-radius: 50%;
+}
+
+input[type="checkbox"] {
+	
+}
+
+
+/* ===========================================================
+
+	#PLACEHOLDER
+
+=========================================================== */
+
+::-webkit-input-placeholder {
+   color: $pri;
+}
+:-moz-placeholder { // Firefox 18-
+   color: $pri;  
+}
+::-moz-placeholder {  // Firefox 19+
+   color: $pri;  
+}
+:-ms-input-placeholder {  
+   color: $pri;
+}

@@ -1,0 +1,61 @@
+/* ===========================================================
+
+	#NAV - FOOTER
+
+=========================================================== */
+
+.nav__list {
+	list-style: none;
+}
+
+.nav__item {
+	margin: 0;
+}
+
+.nav--footer {
+
+	.nav__link {
+		color: #fff;
+		font-size: 1.4rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		transition: background $speed ease, color $speed ease;
+
+		&:after {
+			content: "";
+			width: 100%;
+			display: block;
+			height: 2px;
+			transition: background $speed ease;
+		}
+
+		&:hover {
+			
+			&:after {
+				background: #fff;
+			}
+		}
+	}
+
+}
+
+@include respond-min( $mq-small ) {
+
+	.nav--footer {
+
+		.nav__list {
+			text-align: center;
+		}
+
+		.nav__item {
+			display: inline;
+		}
+
+		.nav__link {
+			display: inline-block;
+			padding: 3rem 1.5rem;
+		}
+
+	}
+
+}

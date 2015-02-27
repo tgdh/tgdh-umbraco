@@ -1,0 +1,20 @@
+/* ===========================================================
+
+	#SMALL
+
+=========================================================== */
+
+small,
+.small {
+	font-size: 65%;
+}
+
+.small-caps {
+	color: $pri;
+	font-family: monospace;
+	font-size: 1.4em;
+	font-variant: small-caps; // https://developer.mozilla.org/en-US/docs/CSS/font-variant
+	font-weight: 600;
+	letter-spacing: 0.125em;
+	text-transform: lowercase;
+}

@@ -1,0 +1,63 @@
+/* ===========================================================
+
+	#LISTING
+
+=========================================================== */
+
+.listing__wrap {
+	padding-bottom: 10rem;
+}
+.listing {
+	transition: background $speed ease;
+}
+
+.listing:hover {
+
+	.listing__title {
+		color: $sec;
+	}
+
+}
+
+.listing__link {
+	display: block;
+	transition: background $speed ease;
+
+	&:hover {
+		background-color: #fff;
+	}
+}
+
+.listing__title {
+	color: $pri;
+	transition: color $speed ease;
+}
+
+/* listing - list */
+
+.listing--list {
+	padding: 2rem 0;
+
+	.listing__title {
+		padding: 0;
+		text-align: center;
+		position: relative;
+
+		&:after {
+			color: $yellow--1;
+			position: absolute;
+			right: 4rem;
+			opacity: 0;
+			transition: transform $speed ease, opacity $speed ease;
+		}
+	}
+
+	&:hover {
+
+		.listing__title:after {
+			transform: translateX(2rem);
+			opacity: 1;
+		}
+	}
+
+}

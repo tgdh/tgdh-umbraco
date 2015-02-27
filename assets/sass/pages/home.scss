@@ -1,0 +1,159 @@
+/* ===========================================================
+
+	#HOME
+
+=========================================================== */
+
+/* Coffee form fix */
+@include respond-max( 32em ){
+	.table--scroll {
+		overflow-y: hidden;
+		overflow-x: auto;
+		position: relative;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		-webkit-overflow-scrolling: touch;
+		width: 25rem !important;
+		max-width: 25rem !important;
+	}
+
+}
+
+input,
+textarea {
+	-webkit-appearance: none;
+}
+
+.button--center {
+	margin-left: auto;
+	margin-right: auto;
+	display: table!important;
+}
+
+.button--career {
+	margin-top: 2rem;
+}
+
+.body-text {
+	margin-bottom: 4rem;
+}
+
+.center {
+	text-align: center;
+}
+
+.left {
+	text-align: left;
+}
+.page-down {
+/*	color: #fff;*/
+	font-size: 1.8rem;
+/*	text-transform: lowercase;*/
+	display: block;
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+
+	i {
+/*		color: $yellow--1;*/
+		font-size: 1.2rem;
+		vertical-align: middle;
+		padding-left: 1rem;
+	}
+}
+
+.arrow-link {
+	color: white;
+/*	display: block;*/
+	margin: 0 auto;
+	margin-top: 4rem;
+	text-align: center;
+}
+
+.right {
+	float: right;
+}
+.ico-arrow-right-outline:before {
+	content: "\e607";
+	font-size: 6rem;
+	vertical-align: middle;
+}
+
+.arrow-link i {
+
+	display: inline-block;
+	vertical-align: middle;
+	transition: all .3s ease;
+}
+
+.arrow-link:hover i {
+	transform: translateX(0.5rem);
+	color: white;
+}
+
+.arrow-link i {
+	font-size: 1.2rem;
+	transition: .3s;
+	transform: translateX(0rem);
+	padding-left: 1rem;
+	line-height: 2rem;
+}
+
+.cta-icon {
+	max-width: 17rem;
+	width: 80%;
+	display: block;
+	margin: 3rem auto;
+}
+
+.hello {
+	font-size: 5rem;
+}
+
+.cta-wrap {
+	@include column(4);
+}
+.cta-text {
+	text-align: center;
+	font-size: 1.7rem;
+	line-height: 2rem;
+	max-width: 28rem;
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: 200;
+	color: #738D8B;
+}
+
+@include respond-min( $mq-medium ) {
+
+
+	.page-down i {
+/*		font-size: 4.8rem;*/
+	}
+
+	.cta-text {
+		font-size: 2.2rem;
+		line-height: 2.4rem;
+	}
+
+}
+
+@include respond-min( $mq-medium ) {
+
+	.mini {
+		position: absolute;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+
+}
+
+@include respond-min( $mq-large ) {
+
+	.cta-text {
+		font-size: 2.7rem;
+		line-height: 3rem;
+	}
+
+}

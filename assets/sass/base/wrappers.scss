@@ -1,0 +1,65 @@
+/* ===========================================================
+
+	#WRAPPERS
+
+=========================================================== */
+
+.wrap {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.wrap--medium {
+	max-width: 84rem;
+}
+
+.wrap--large {
+	max-width: 92rem;
+}
+
+.wrap--x-large {
+	max-width: 114rem;
+}
+
+.wrap--xx-large {
+	max-width: 140rem;
+}
+
+.section {
+	padding-top: $padding--small;
+	padding-bottom: $padding--small;
+}
+
+@include respond-min( $mq-small ) {
+
+	.wrap {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+}
+
+@include respond-min( $mq-medium ) {
+
+	.wrap {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+
+	.section {
+		padding-top: $padding--medium;
+		padding-bottom: $padding--medium;
+	}
+
+}
+
+@include respond-min( $mq-large ) {
+
+	.section {
+		padding-top: $padding--large;
+		padding-bottom: $padding--large;
+	}
+
+}

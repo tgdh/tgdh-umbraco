@@ -1,0 +1,105 @@
+/* ===========================================================
+
+	#CONTACT
+
+=========================================================== */
+
+.col--map {
+	min-height: 30rem;
+}
+
+.col--copy {
+	padding: 4rem 2rem;
+}
+.contact-info {
+
+	.ico-phone {
+		color: $green--1;
+	}
+
+	.ico-twitter {
+		color: $blue--1;
+	}
+
+	.ico-mail {
+		color: $yellow--1;
+	}
+
+	.ico-place {
+		color: $pink--1;
+	}
+
+}
+
+.list--icon {
+	list-style: none;
+
+
+	.list__item {
+		margin: 0;
+		margin-bottom: 1.5em;
+		position: relative;
+
+		a {
+			color: $text-colour;
+		}
+
+		&:before {
+			display: none;
+		}
+	}
+
+	.list__icon {
+		font-size: 3.2rem;
+		position: absolute;
+	}
+
+	.list__content {
+		padding-left: 4rem;
+	}
+
+}
+
+.doc--contact { 
+	
+	.page__content {
+		padding: 2rem;
+	}
+}
+
+@include respond-min( $mq-small ) {
+
+	.doc--contact {
+
+		.col {
+			width: 50%;
+			display: inline-block;
+			float: left;
+			margin: 0;
+		}
+
+		.col--copy {
+			padding: 8rem 10%;
+		}
+
+		.page__content {
+			padding: 0;
+		}
+
+	}
+
+}
+
+
+@include respond-min( $mq-x-large ) {
+
+	.list--icon {
+
+		.list__item {
+			width: 50%;
+			float: left;
+		}
+
+	}
+
+}

@@ -1,0 +1,23 @@
+/* ===========================================================
+
+	#NEWS
+
+=========================================================== */
+
+.post-date {
+	color: $blue--1;
+	margin-bottom: 3rem;
+}
+.header-image {
+	max-width: 90rem;
+	margin: 0 auto;
+}
+
+@include respond-min( $mq-medium ){
+
+	.header-image {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+}

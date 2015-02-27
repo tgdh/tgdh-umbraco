@@ -1,0 +1,90 @@
+/* ===========================================================
+
+	#COVER
+
+=========================================================== */
+
+
+
+.carousel--cover,
+.cover {
+	position: relative;
+	height: 100%;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,.2);
+	z-index: 1;
+}
+
+.cover {
+	background: $dark--1 center center;
+	background-size: cover;
+}
+
+.csstransforms {
+
+	.cover__content {
+		position: relative;
+		top: 40%;
+		transform: translateY(-50%);
+		z-index: 2;
+	}
+
+}
+
+.no-csstransforms {
+
+	.cover__content {
+		padding-top: 10rem;
+	}
+
+}
+
+.cover__content {
+	text-align: center;
+}
+
+.cover__title {
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	text-shadow: 0 0 3px rgba(0,0,0,.05), 0 1px 5px rgba(0,0,0,.3);
+}
+
+/* cover post */
+
+.cover--post {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@include respond-max( $mq-large ) {
+
+	#main .cover--post {
+		border-radius: 0;
+	}
+
+}
+
+@include respond-min( $mq-medium ) {
+
+	.cover--post {
+		margin-top: 2rem;
+	}
+
+}
+
+@include respond-min( $mq-large ) {
+
+	.cover--post {
+		margin-top: 6rem;
+	}
+
+}

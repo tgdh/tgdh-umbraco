@@ -1,0 +1,61 @@
+/* ===========================================================
+
+	#BUTTONS
+
+=========================================================== */
+
+.button {
+	border-radius: .8rem;
+	display: inline-block;
+	line-height: 1;
+	padding: 1rem 1.5rem;
+	transition: background $speed ease, border $speed ease, color $speed ease;
+}
+
+.button--not-full {
+	border-radius: .8rem;
+	display: inline-block;
+	line-height: 1;
+	padding: 1rem 1.5rem;
+	transition: background $speed ease, border $speed ease, color $speed ease;
+}
+
+.button--large {
+	padding: 1.5rem 2rem;
+}
+
+.button--primary {
+	background: $pri;
+	color: #fff;
+
+	&:hover,
+	&:focus {
+		background: $sec;
+		color: #fff;
+	}
+}
+
+.button--secondary {
+	background: transparent;
+	border: .2rem solid #fff;
+	color: #fff;
+
+	&:hover,
+	&:focus {
+		background: $sec;
+		color: #fff;
+		border: .2rem solid transparent;
+	}
+}
+
+@include respond-max( $mq-small ) {
+
+	.button {
+		width: 100%;
+	}
+
+	.button + .button {
+		margin-top: 1em;
+	}
+
+}

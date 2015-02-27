@@ -1,0 +1,19 @@
+/* ===========================================================
+
+	#ANCHOR
+
+=========================================================== */
+
+a {
+	color: $pri;
+	transition: color $speed ease;
+
+	&:hover,
+	&:focus {
+		color: $sec;
+	}
+}
+
+a[href^=tel]:hover {
+	cursor: default;
+}

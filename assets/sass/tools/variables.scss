@@ -1,0 +1,72 @@
+/* ===========================================================
+
+	#COLOURS
+
+=========================================================== */
+
+$light--1:		#f8f8f8;
+$light--2:		#eff1f1; 
+$light--3:		#dfe5e5;
+
+$grey--1:		#c8d1d0;
+$grey--2:		#a5aeae;
+$grey--3:		#758f8c;  /*738D8B*/
+
+$dark--1: 		#282828;  /*F36F21 */
+$dark--2:		#4a4a4a;
+$dark--3:		#738d8b; /* #F6F6F6 */
+$dark--4:		#7e9695;
+$dark--5:		#073734;
+
+$blue--1: 		#00b7ce;
+$pink--1: 		#ed1165;
+$green--1: 		darken(#5ec06a, 10);
+$yellow--1:		#fad620;
+$orange-1:		#F36F21;
+
+$pri: 			$blue--1;
+$sec: 			$pink--1;
+
+
+/* ===========================================================
+
+	#TYPOGRAPHY
+
+=========================================================== */
+
+$font-size--small:		1.6rem;
+$font-size--large:		1.8rem;
+$line-height:			1.6em;
+$type-scale--small:		1.125;
+$type-scale--large:		1.200;
+
+/* ===========================================================
+
+	#BASE VALUES
+
+=========================================================== */
+
+$text-colour:			$dark--2;
+$background-colour:		$light--1;
+$border-colour:			$sec;
+$highlight-colour:		$sec;
+
+$padding--small:		4rem;
+$padding--medium:		6rem;
+$padding--large:		8rem;
+
+$border-width: 			.2rem;
+$border-radius: 		.4rem;
+$speed: 				.3s;
+
+/* ===========================================================
+
+	#MEDIA QUERIES
+
+=========================================================== */
+
+$mq-small: 				37.5em;		// 600px
+$mq-medium: 			50em; 		// 800px
+$mq-large: 				62.5em; 	// 1000px
+$mq-x-large: 			80em; 		// 1280px
+$mq-xx-large:			93.75em;	// 1500px

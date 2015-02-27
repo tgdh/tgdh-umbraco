@@ -1,0 +1,20 @@
+/* ===========================================================
+
+	#LISTING - ARTICLE
+
+=========================================================== */
+
+.listing--article {
+	color: $text-colour;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+@include respond-min( $mq-small ) {
+
+	.listing--article {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}
+
+}

@@ -1,0 +1,77 @@
+/* ===========================================================
+
+	#COVER
+
+=========================================================== */
+
+.carousel--cover{
+	color: #fff;
+	background-color: $dark--1;
+
+	.cover {
+		opacity: 0;
+		transition: opacity $speed ease;
+	}
+
+	&.owl-loaded .cover {
+		opacity: 1;
+	}
+
+	.owl-stage-outer,
+	.owl-stage,
+	.owl-item {
+		position: relative;
+		height: 100%;
+	}
+
+	.page {
+		color: #fff;
+		width: 10%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		z-index: 10;
+		transition: background $speed ease;
+
+		&:hover {
+			background-color: rgba(0,0,0,.1);
+
+			i {
+				opacity: 1;
+			}
+		}
+
+		i {
+			display: block;
+			opacity: .5;
+			transition: transform $speed ease, opacity $speed ease;
+		}
+	}
+
+	.page--prev {
+		left: 0;
+
+		&:hover i {
+			transform: translateX(-2rem);
+		}
+	}
+
+	.page--next {
+		right: 0;
+
+		&:hover i {
+			transform: translateX(2rem);
+		}
+	}
+
+	.button {
+		padding: 1.5rem 2rem;
+
+		&:hover {
+			color: $text-colour;
+			background-color: #fff;
+		}
+	}
+
+}
+

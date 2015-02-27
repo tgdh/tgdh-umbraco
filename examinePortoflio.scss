@@ -1,0 +1,200 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Examine
+@using Examine.SearchCriteria
+@using Examine.LuceneEngine.SearchCriteria
+@{
+    Layout = "Master.cshtml";
+
+}
+
+
+@* 
+	Resources
+	----------------------
+	http://sleslie.me/2014/search-umbraco-using-examine-and-razor/ 
+	http://umbraco.com/follow-us/blog-archive/2011/9/16/examining-examine
+	http://24days.in/umbraco/2013/getting-started-with-examine/
+	http://our.umbraco.org/forum/umbraco-7/using-umbraco-7/60382-Get-content-by-multiple-tags-not-returning-any-results
+	http://www.wiliam.com.au/wiliam-blog/web-design-sydney-using-examine-to-boost-your-umbraco-front-end-performance
+
+	https://github.com/Shazwazza/Examine/wiki
+*@
+	
+
+@* ===========================================================
+	# Get results
+=========================================================== *@
+@{
+	var cat = Request.QueryString["cat"];
+	var sector = Request.QueryString["sector"];
+	var docType = "PortfolioItem";
+	
+	var Searcher = ExamineManager.Instance.SearchProviderCollection["TagSearchSearcher"];
+	var searchCriteria = Searcher.CreateSearchCriteria(Examine.SearchCriteria.BooleanOperation.Or);
+	
+	
+	if(cat == null && sector == null) {
+		<p>Returning everything</p>	
+		
+		var test = Searcher.Search( 
+			searchCriteria.Field( "nodeTypeAlias",docType ).Compile() 
+		).OrderByDescending(x => x.Score);	
+		
+		foreach( var item in test ) {
+			<p>@item</p>
+		}
+			
+		return;
+	}
+	
+	
+	var cat_split = cat.Split(',');
+	var sector_split = sector.Split(',');
+	
+	
+@*	
+
+--
++nodeTypeAlias:docType 
++(catTags:a1 catTags:a2 catTags:a3) 
++(sectorTags:b1 sectorTags:b2 sectorTags:b3)
+--
+
+foreach( var term in catTags.Split(',') ) {
+	
+}
+
+--
+
+searchCriteria.Field("nodeTypeAlias",docType)
+	.And()
+	.GroupedOr(
+		new string[] { 
+			"catTags", "branding"
+		}, new string[]{
+			"catTags", "digital"
+		}
+	)
+	.And()
+	.GroupedOr(
+		new string[] { 
+			"sectorTags", "medical"
+		}, new string[]{
+			"sectorTags", "school"
+		}
+	)
+.Compile();
+
+
+nodeName:hello 
++(catTags:branding catTags:digital)
++(sectorTags:medical catTags:school)
+*@	
+		
+
+	var fieldsToSearch = new[] {
+		"categoryTags","sectorTags"
+	};
+@*		
+	IBooleanOperation filter = searchCriteria
+			.Field( "nodeTypeAlias",docType )
+			.And()
+			.GroupedOr( fieldsToSearch, cat_split.First() );
+	
+	
+	foreach (var term in cat_split.Skip(1)) {
+       filter = filter.Or().GroupedOr(fieldsToSearch, term);
+	}
+*@
+		
+@*
+	I think this works:
+	http://umbraco.tgdh.co.uk.217-147-85-119.tgdh-web.co.uk/portfolio?altTemplate=tagFilter5&cat=Branding&sector=Education
+
+	cat = branding		( returns 3 )
+	sector = Education
+	
+	cat = launch		( returns 1 )
+	
+*@
+		
+	IBooleanOperation query = searchCriteria
+			.Field( "nodeTypeAlias", docType )
+			.And()
+			.Field( "sectorTags", sector_split.First() );
+	
+	foreach( var term in sector_split.Skip(1) ) {
+		query = query.Or().Field("sectorTags", term);
+	}
+	
+	query = query.And().Field( "categoryTags", cat_split.First() );
+	
+	foreach( var term in cat_split.Skip(1) ) {
+		query = query.Or().Field("categoryTags", term);
+	}
+	
+	
+@*
+	Field( "nodeTypeAlias", docType )
+		.And()
+			.Field("sectorTags", sector_split.First() )
+		.Or()
+			.Field("sectorTags", "Education")
+		.Or()
+			.Field("sectorTags", "Entertainment")
+		.And()
+			.Field("categoryTags", cat_split.First() )
+		.Or
+			.Field("categoryTags", "Branding");
+		.Or
+			.Field("categoryTags", "Digital")
+
+
+	.Compile();
+			
+
+*@
+	
+	var searchResults = Searcher.Search( query.Compile() );
+	var count = searchResults.Count();
+	
+	var paging = Paging.GetPages(searchResults.Count(), 12); 	@* Updating items per page need to update portfolioPage settings too *@
+	var selectedArticles = searchResults.Skip((int)paging.Skip).Take((int)paging.Take).ToList();
+
+}
+
+@{ Html.RenderPartial("portfolio-filter"); }	
+
+<div class="stats">
+<p>Counts</p>
+<p>Tile count: <span class="tileCount" style="color: yellow;">0</span></p>
+<p>Active tile: <span class="activeTile" style="color: yellow;">0</span></p>
+<p>Active row: <span class="activeRow" style="color: yellow;">0</span></p>
+<p>Tile row: <span class="tileRow" style="color: yellow;">0</span></p>
+<p>Insert after: <span class="insertAfter" style="color: yellow;">0</span></p>
+<p>Active: <span class="activeBlock" style="color: red;">false</span></p>
+<p>Children: <span class="children" style="color: grey;">0</span></p>
+<p>Total pages: <span class="pages">0</span></>
+<p>Current page: <span class="currentPage">0</span></>
+<p>Next page: <span class="nextPage">0</span></>
+<p>Prev page: <span class="prevPage">0</span></>
+</div>
+
+<div class="wrap wrap--medium">	
+	<p><strong>Doc type: <span style="color: coral;">@docType</span></strong><br/>
+	<strong>Cat: <span style="color: coral;">@cat</span></strong><br/>
+	<strong>Sector: <span style="color: coral;">@sector</span></strong><br/>
+	<strong>Count: <span style="color: coral;">@count</span></strong></p>
+	<ul>
+		@foreach (var result in selectedArticles) {
+			var item = Umbraco.Content(result.Id);
+			<li>
+				<span style="color: crimson;">@item.Name</span><br/>
+				<strong>sector: @item.sectorTags</strong><br/>
+				<strong>category: @item.categoryTags</strong><br/>
+				<strong>@item.DocumentTypeAlias</strong>
+      		</li>	
+		}
+	</ul>
+</div>	
+		

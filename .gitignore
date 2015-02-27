@@ -1,0 +1,27 @@
+# Files to ignore
+.ftppass
+/assets/build/css/style-ie.min.css
+/assets/build/css/style.min.css
+/assets/build/js/dev/script.js
+/assets/build/js/head-script.min.js
+/assets/build/js/script.min.js
+/assets/css/style-ie.css
+/assets/css/style-ie.css.map
+/assets/css/style.css
+/assets/css/style.css.map
+
+# Folders to ignore
+node_modules
+.sass-cache
+assets/build/
+assets/build/css/style-ie.min.css
+
+assets/build/css/style.min.css
+
+assets/build/css/style-ie.min.css
+
+assets/build/css/style.min.css
+
+assets/build/js/script.min.js
+
+assets/css/style-ie.css

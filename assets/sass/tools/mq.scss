@@ -1,0 +1,46 @@
+/* ===========================================================
+
+	This must be included at the end of every other SCSS file
+	so media queries are always combined in the right order
+
+=========================================================== */
+
+@include respond-min( $mq-small ) {
+
+	.foo {
+		color: #f00;
+	}
+
+}
+
+@include respond-min( $mq-medium ) {
+
+	.foo {
+		color: #f00;
+	}
+
+}
+
+@include respond-min( $mq-large ) {
+
+	.foo {
+		color: #f00;
+	}
+
+}
+
+@include respond-min( $mq-x-large ) {
+
+	.foo {
+		color: #f00;
+	}
+
+}
+
+@include respond-min( $mq-xx-large ) {
+
+	.foo {
+		color: #f00;
+	}
+	
+}

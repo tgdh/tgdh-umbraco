@@ -1,0 +1,111 @@
+/* ===========================================================
+
+	#HEADER
+
+=========================================================== */
+
+.page__header {
+	background-color: $grey--1;
+	z-index: 100;
+	position: relative;
+}
+
+.page__logo-link {
+	display: block;
+	padding:.6rem 1.5rem;
+	background-color: $grey--1;
+}
+
+.page__logo {
+	height: 4rem;
+	width: initial;
+}
+
+@include respond-max( $mq-large ) {
+
+	.nav__list {
+		margin-top: 1rem;
+	}
+
+	.bubble {
+		color: white;
+		display: block;
+		width: 100%;
+		padding: 1rem 1.5rem;
+		text-transform: uppercase;
+		font-size: 1.4rem;
+		font-weight: 700;
+		margin-bottom: 2rem;
+	}
+
+	.nav__link:hover {
+		color: $pink--1;
+	}
+
+}
+@include respond-min( $mq-large ) {
+
+	.page__logo-link {
+		display: inline-block;
+		padding:1.6rem 2rem;
+		position: absolute;
+		background-color: transparent;
+	}
+
+	.page__logo {
+		height: 5rem;
+		width: initial;
+	}
+	.bubble {
+		color: #fff;
+		font-size: 1.4rem;
+		padding: 1rem 1.4rem;
+		border-radius: 1.2rem;
+		font-weight: 700;
+		position: relative;
+		display: inline-block;
+		background-color: $pri;
+		text-transform: uppercase;
+		transition: background $speed ease;
+
+		&:before {
+			content: "";
+			position: absolute;
+			bottom: -1rem;
+			left: 2rem;
+			border-width: 2rem 2rem 0 0;
+			border-style: solid;
+			border-color: $pri transparent;
+			display: block;
+			width: 0;
+			transition: border-color $speed ease;
+		}
+
+		&:hover {
+			color: #fff;
+			background-color: $sec;
+
+			&:before {
+				border-color: $sec transparent;
+			}
+		}
+	}
+}
+
+
+
+
+
+@include respond-min( $mq-large ) {
+
+	.page__header {
+
+		.bubble {
+			position: absolute;
+			top: 1.5rem;
+			right: 1.6rem;
+		}
+
+	}
+
+}

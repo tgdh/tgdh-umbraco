@@ -1,0 +1,38 @@
+/* ===========================================================
+
+	#FIGURE
+
+=========================================================== */
+
+figcaption {
+	font-size: 1.6rem;
+	padding-top: $line-height;
+	text-align: center;
+}
+
+@include respond-min( $mq-xx-large ) {
+
+	figcaption {
+		line-height: 1.3;
+		padding: 0;
+		position: absolute;
+		text-align: right;
+		top: $line-height;
+		left: -18rem;
+		width: 15rem;
+	}
+
+	.mfp-content {
+		figcaption {
+			line-height: 1.3;
+			padding: 0;
+			position: absolute;
+			text-align: right;
+			top: 1.6em;
+			/* left: -18rem; */
+			width: 34rem;
+			bottom: -3rem;
+			left: 0;
+		}
+	}
+}

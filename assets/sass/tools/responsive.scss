@@ -1,0 +1,23 @@
+/* ===========================================================
+
+	#MEDIA QUERIES
+
+=========================================================== */
+
+@mixin respond-min( $width ) {
+	@media only screen and ( min-width: $width ) {
+		@content;
+	}
+}
+
+@mixin respond-max( $width ) {
+	@media only screen and ( max-width: $width - 0.01em) {
+		@content;
+	}
+}
+
+@mixin respond-min-max( $min, $max ) {
+	@media only screen and ( min-width: $min ) and ( max-width: $max - 0.01em ) {
+		@content;
+	}
+}

@@ -1,0 +1,90 @@
+/* ===========================================================
+
+	#BASE
+
+=========================================================== */
+
+html {
+	font-size: 62.5%;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+	color: $text-colour;
+	font-family: 'Proxima Nova', Arial, Helvetica, Geneva, sans-serif;
+	font-size: $font-size--small;
+	font-feature-settings: 'liga', 'kern'; //= http://elliotjaystocks.com/blog/kerning/
+	font-kerning: normal; 
+	line-height: 1.5;
+
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+p + p,
+p + ul,
+p + ol,
+ul + p,
+ol + p {
+	margin-top: 1.5 + em; //= Preserves verticle rythm being equal to line-height
+}
+
+p + h1, 
+p + h2, 
+p + h3, 
+p + h4, 
+p + h5, 
+p + h6,
+ul + h1, 
+ul + h2, 
+ul + h3, 
+ul + h4, 
+ul + h5, 
+ul + h6,
+pre + h1, 
+pre + h2, 
+pre + h3, 
+pre + h4, 
+pre + h5, 
+pre + h6, {
+	padding-top: 1.5 + em;
+}
+
+em {
+	font-style: italic;
+}
+
+::selection {
+	color: #4A4A4A;
+	background: lighten($highlight-colour, 30);
+}
+
+::-moz-selection {
+	color: #4A4A4A;
+	background: lighten($highlight-colour, 30);
+}
+
+@include respond-min( $mq-medium ) {
+
+	body,
+	input,
+	textarea,
+	select,
+	button {
+		font-size: $font-size--large;
+	}
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+
+	p {
+		letter-spacing: 0.01em; //= Increase letter-spacing on high pixel density screens as they can appear too close
+		word-spacing: 0.01em; //= Word-spacing same as letter-spacing for consistency
+	}
+
+}
