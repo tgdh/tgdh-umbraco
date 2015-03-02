@@ -22,14 +22,24 @@
 
 		el.on('click', function(event) {
 		    var target = $( $(this).attr('href') );
+
 		    if( target.length ) {
-		        event.preventDefault();
+				event.preventDefault();
 		        $('html, body').animate({
-		            scrollTop: target.offset().top - 40
-		        }, 800);
+		            scrollTop: target.offset().top
+		        }, 500);
+
+
 		    }
 		});
 
+	}
+
+	// svg fallback to png
+	if(!Modernizr.svg) {
+	    $('img[src*="svg"]').attr('src', function() {
+	        return $(this).attr('src').replace('.svg', '.png');
+	    });
 	}
 
 	var coverCarousel = function() {
@@ -45,7 +55,7 @@
 		    dots: true,
 		    onInitialized: function() {
 		    	var $pageDown = $('<a>', {
-		    		href: 	'#main',
+		    		href: 	'#header',
 		    		class: 	'page-down button--secondary'	,
 		    		html: 	'<i class="ico-arrow-down"></i>'
 		    		

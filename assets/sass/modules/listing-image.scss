@@ -10,6 +10,10 @@
 	padding-bottom: 4rem;
 }
 
+.listing__cover {
+	border-radius: .3rem;
+}
+
 @include respond-max( $mq-small ) {
 
 	.listing--image {

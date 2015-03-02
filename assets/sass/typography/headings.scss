@@ -48,7 +48,7 @@ $alpha--small: 		$beta--small		*	$type-scale--small;
 $mega--small:		$alpha--small		*	$type-scale--small;
 $giga--small:		$mega--small		*	$type-scale--small;
 $tera--small: 		$giga--small		*	$type-scale--small;
-$intro--small: 		$zeta--small;
+$intro--small: 		$delta--small;
 
 .tera {
 	@include heading-font-size($tera--small);
@@ -98,7 +98,8 @@ h6,
 	font-weight: 200 !important;
 }
 
-.intro + p {
+.intro + p,
+.intro + h2 {
 	padding-top: 1.5em;
 }
 

@@ -58,6 +58,14 @@ em {
 	font-style: italic;
 }
 
+pre {
+	overflow: auto;
+	background: $light--2;
+	padding: 1.5rem;
+	border-radius: .3rem;
+	-webkit-overflow-scrolling: touch;
+}
+
 ::selection {
 	color: #4A4A4A;
 	background: lighten($highlight-colour, 30);
