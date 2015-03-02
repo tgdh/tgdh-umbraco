@@ -10,6 +10,18 @@
 	padding-bottom: 4rem;
 }
 
+@include respond-max( $mq-small ) {
+
+	.listing--image {
+
+		.listing__cover {
+			margin-bottom: $line-height;
+		}
+
+	}
+
+}
+
 @include respond-min( $mq-small ) {
 
 	.listing--image {

@@ -48,7 +48,7 @@ $alpha--small: 		$beta--small		*	$type-scale--small;
 $mega--small:		$alpha--small		*	$type-scale--small;
 $giga--small:		$mega--small		*	$type-scale--small;
 $tera--small: 		$giga--small		*	$type-scale--small;
-$intro--small: 		$delta--small;
+$intro--small: 		$zeta--small;
 
 .tera {
 	@include heading-font-size($tera--small);

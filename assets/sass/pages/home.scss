@@ -11,8 +11,16 @@
 		background: none;
 	}
 
-	.page__header {
-		min-height: 5.2rem;
+}
+
+@include respond-max( $mq-large	 ) {
+
+	.doc--home {
+
+		.page__header {
+			padding-top: 5.2rem;
+		}
+
 	}
 
 }
@@ -148,16 +156,19 @@ textarea {
 }
 .cta-text {
 	text-align: center;
-	font-size: 1.7rem;
 	line-height: 2rem;
 	max-width: 28rem;
 	margin-left: auto;
 	margin-right: auto;
-	font-weight: 200;
 	color: #738D8B;
 }
 
 @include respond-min( $mq-medium ) {
+
+	.cta-text {
+		font-size: 1.7rem;
+		font-weight: 200;
+	}
 
 
 	.page-down i {

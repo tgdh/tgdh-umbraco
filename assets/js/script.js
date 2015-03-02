@@ -281,9 +281,7 @@
 		$('#main').fitVids();
 //		initFormValidation();
 
-		if (matchMedia('only screen and (min-width: 50em)').matches) {
-			$('#header').scrollToFixed();
-		}		
+		$('#header').scrollToFixed();
 
 	});
 

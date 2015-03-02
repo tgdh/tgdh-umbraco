@@ -66,6 +66,7 @@
 	}
 
 	.button {
+		width: inherit;
 		padding: 1.5rem 2rem;
 
 		&:hover {
@@ -77,15 +78,6 @@
 	.button--primary {
 		padding: 1.4rem 3rem;
 	}
-
-}
-
-@include respond-max( $mq-large ) {
-
-	.doc--home body {
-		height: calc(100% - 5.2rem );
-	}
-			
 
 }
 
