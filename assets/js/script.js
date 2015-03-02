@@ -255,6 +255,15 @@
 	};
 
 
+	var triggerAnimations = function() {
+
+		wow = new WOW({
+			offset:       200
+		})
+		wow.init();
+
+	}
+
 
 /* ===========================================================
 
@@ -270,8 +279,11 @@
 		sizeMap();
 		scrollTo( $('a[href^="#"]') );
 		$('#main').fitVids();
-		initFormValidation();
-		$('#header').scrollToFixed();
+//		initFormValidation();
+
+		if (matchMedia('only screen and (min-width: 50em)').matches) {
+			$('#header').scrollToFixed();
+		}		
 
 	});
 
@@ -283,14 +295,13 @@
 		$('.grid-section').animate({opacity: 1}, 600);
 		coffeeScript();
 		filterButton();
-		new WOW().init();
+		triggerAnimations();
 
 	});
 
 	$(window).resize(function() {
 	    caseStudy();
 	});
-
 
 
 })(jQuery);

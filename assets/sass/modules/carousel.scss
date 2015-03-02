@@ -42,6 +42,7 @@
 		}
 
 		i {
+			font-size: 2.4rem;
 			display: block;
 			opacity: .5;
 			transition: transform $speed ease, opacity $speed ease;
@@ -79,3 +80,24 @@
 
 }
 
+@include respond-max( $mq-large ) {
+
+	.doc--home body {
+		height: calc(100% - 5.2rem );
+	}
+			
+
+}
+
+@include respond-min( $mq-medium ) {
+
+	.carousel--cover {
+
+		.page i {
+
+			font-size: 3.2rem;
+		}
+
+	}
+
+}

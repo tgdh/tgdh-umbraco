@@ -4,6 +4,37 @@
 
 =========================================================== */
 
+.doc--home {
+
+	.page__logo-link {
+		position: absolute;
+		background: none;
+	}
+
+	.page__header {
+		min-height: 5.2rem;
+	}
+
+}
+
+@include respond-min( $mq-small ) {
+
+	.doc--home {
+
+		.section--intro {
+
+			.intro {
+				text-align: center;
+			}
+
+		}
+
+	}	
+
+
+}
+
+
 /* Coffee form fix */
 @include respond-max( 32em ){
 	.table--scroll {
@@ -50,7 +81,7 @@ textarea {
 /*	text-transform: lowercase;*/
 	display: block;
 	position: absolute;
-	bottom: 10%;
+	bottom: $line-height;
 	left: 50%;
 	padding: .8rem 1.6rem .9rem;
 	border-radius: 50%;

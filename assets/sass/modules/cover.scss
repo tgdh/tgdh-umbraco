@@ -4,8 +4,6 @@
 
 =========================================================== */
 
-
-
 .carousel--cover,
 .cover {
 	position: relative;
@@ -52,7 +50,6 @@
 
 .cover__title {
 	color: #fff;
-	font-size: 4.4rem;
 	text-transform: uppercase;
 	font-weight: 700;
 	padding-bottom: 1em;
@@ -81,7 +78,7 @@
 	}
 
 	.cover__title {
-		font-size: 6rem;
+		font-size: 4.4rem;
 	}
 
 }
@@ -90,6 +87,10 @@
 
 	.cover--post {
 		margin-top: 6rem;
+	}
+
+	.cover__title {
+		font-size: 6rem;
 	}
 
 }

@@ -220,14 +220,6 @@
 		overflow: hidden;
 	}
 
-
-	.text-tile {
-		padding-top: 5rem;
-		padding-left: 2rem;
-		padding-right: 2rem;
-		padding-bottom: 4rem;
-	}	
-
 	.study__heading {
 		position: absolute;
 		bottom: 0;
@@ -340,14 +332,7 @@
 @include respond-min( $mq-medium ) {
 
 	.text-tile {
-		padding-top: 6rem;
-		padding-left: 4rem;
-		padding-right: 4rem;
-		padding-bottom: 5rem;
-	}	
-
-	.text-tile {
-		padding: 6rem;
+		padding: 5%;
 	}
 
 	.tile__heading {
@@ -374,10 +359,7 @@
 @include respond-min( $mq-large ) {
 
 	.text-tile {
-		padding-top: 8rem;
-		padding-left: 7rem;
-		padding-right: 7rem;
-		padding-bottom: 8rem;
+		padding: 7%;
 	}
 
 }
