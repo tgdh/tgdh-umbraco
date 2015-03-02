@@ -46,8 +46,8 @@
 		    onInitialized: function() {
 		    	var $pageDown = $('<a>', {
 		    		href: 	'#main',
-		    		class: 	'page-down button--not-full button--secondary'	,
-		    		html: 	'Learn more<i class="ico-arrow-down"></i>'
+		    		class: 	'page-down button--secondary'	,
+		    		html: 	'<i class="ico-arrow-down"></i>'
 		    		
 		    	});
 

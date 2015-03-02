@@ -14,6 +14,7 @@
 	display: block;
 	padding:.6rem 1.5rem;
 	background-color: $grey--1;
+	z-index: 10;
 }
 
 .page__logo {
@@ -102,7 +103,7 @@
 
 		.bubble {
 			position: absolute;
-			top: 1.5rem;
+			top: 2.4rem;
 			right: 1.6rem;
 		}
 

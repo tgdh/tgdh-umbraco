@@ -52,9 +52,10 @@
 
 .cover__title {
 	color: #fff;
+	font-size: 4.4rem;
 	text-transform: uppercase;
 	font-weight: 700;
-	text-shadow: 0 0 3px rgba(0,0,0,.05), 0 1px 5px rgba(0,0,0,.3);
+	padding-bottom: 1em;
 }
 
 /* cover post */
@@ -77,6 +78,10 @@
 
 	.cover--post {
 		margin-top: 2rem;
+	}
+
+	.cover__title {
+		font-size: 6rem;
 	}
 
 }

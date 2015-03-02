@@ -190,6 +190,15 @@
 	.tile__tag {
 		display: inline-block;
 		margin: 0;
+
+		&:after {
+			content: "•";
+			margin-left: .5rem;
+		}
+
+		&:last-of-type:after {
+			display: none;
+		}
 	}
 
 	.resource__item:hover .tile__heading {

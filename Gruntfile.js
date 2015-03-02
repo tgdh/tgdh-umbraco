@@ -116,8 +116,8 @@ module.exports = function (grunt) {
                 },
                 src: 'assets/build',
                 dest: 'umbraco.tgdh.co.uk/assets/',
-                exclusions: ['img/*', '**/.DS_Store', '**/Thumbs.db'],
-                keep: ['/img/*']
+                exclusions: ['img/*', 'fonts/', '**/.DS_Store', '**/Thumbs.db'],
+                keep: ['/img/*','/fonts/']
               }
         }
 

@@ -32,6 +32,10 @@
 	padding-bottom: $padding--small;
 }
 
+.section--highlight {
+	background-color: #fff;
+}
+
 @include respond-min( $mq-small ) {
 
 	.wrap {

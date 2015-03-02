@@ -52,13 +52,15 @@ textarea {
 	position: absolute;
 	bottom: 10%;
 	left: 50%;
+	padding: .8rem 1.6rem .9rem;
+	border-radius: 50%;
 	transform: translateX(-50%);
+	transition: background $speed ease;
 
 	i {
 /*		color: $yellow--1;*/
 		font-size: 1.2rem;
 		vertical-align: middle;
-		padding-left: 1rem;
 	}
 }
 

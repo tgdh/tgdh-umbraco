@@ -138,6 +138,16 @@
 .sod_select {
 	cursor: pointer;
 }
+
+.tile-slide--wrap {
+	position: relative;
+}
+
+.carousel__controls {
+	position: absolute;
+	right: 0;
+}
+
 .tile-slide {
 	border: 1rem solid #f6f6f6;
 	border-radius: 0.5rem;
@@ -520,7 +530,7 @@
 
 .module__wrap {
 	padding-top: 8rem;
-	padding-bottom: 10rem;
+	padding-bottom: 8rem;
 	padding-left: 2rem;
 	padding-right: 2rem;
 /*	min-height: 50rem;*/
