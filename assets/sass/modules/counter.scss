@@ -4,7 +4,7 @@
 	font-size: 1rem;
 	color: #fff;
 	display: inline-block;
-	background-color: $pri;
+	background-color: $pink--1;
 	vertical-align: middle;
 	text-align: center;
 	border-radius: 50%;
@@ -14,11 +14,12 @@
 	right: 2rem;
 }
 
-@include respond-min( $mq-medium ) {
+@include respond-min( $mq-large ) {
 
 	.counter {
 		top: 2.4rem;
 		right: .2rem;
+		background-color: $blue--1;
 	}
 
 }

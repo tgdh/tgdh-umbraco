@@ -91,50 +91,6 @@
 		}
 
 	}
-
-/* jquery shuffle partial
-
-	var portfolio = function() {
-		var $grid = $('#grid'),
-			$sizer = $grid.find('.grid__item').first();
-
-			var $filterOptions = $('.nav--tag');
-
-		$grid.shuffle({
-			itemSelector: '.grid__item',
-			delimeter: ',',
-			sizer: $sizer
-		});
-
-		$grid.on('done.shuffle', function() {
-		  console.log('Finished initializing shuffle!');
-		});
-
-		// Set up button clicks
-		setupFilters = function() {
-			var $btns = $filterOptions.find('.filter');
-				$btns.on('click', function() {
-					var $this = $(this),
-					isActive = $this.hasClass( 'active' ),
-					group = isActive ? 'all' : $this.data('category');
-
-					// Hide current label, show current label in title
-					if ( !isActive ) {
-						$('.filter-options .active').removeClass('active');
-					}
-
-					$this.toggleClass('active');
-
-					// Filter elements
-					$grid.shuffle( 'shuffle', group );
-				});
-
-				$btns = null;
-		}
-
-	}
-*/
-
 	var portfolio = function() {
 		checkboxFilter.init();
 
@@ -299,6 +255,7 @@
 	};
 
 
+
 /* ===========================================================
 
 	# INIT
@@ -314,6 +271,7 @@
 		scrollTo( $('a[href^="#"]') );
 		$('#main').fitVids();
 		initFormValidation();
+		$('#header').scrollToFixed();
 
 	});
 
