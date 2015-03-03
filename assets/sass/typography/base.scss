@@ -67,13 +67,11 @@ pre {
 }
 
 ::selection {
-	color: #4A4A4A;
-	background: lighten($highlight-colour, 30);
+	background: $highlight-colour;
 }
 
 ::-moz-selection {
-	color: #4A4A4A;
-	background: lighten($highlight-colour, 30);
+	background: $highlight-colour;
 }
 
 @include respond-min( $mq-medium ) {
