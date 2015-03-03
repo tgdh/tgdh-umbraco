@@ -191,6 +191,12 @@
 				}
 		});
 
+		if( $('.field-validation-error').length > 0 ) {
+
+			$('[data-link="#coffee-form"]').click();
+
+		}
+
 		// FORM STYLE //   
 
 		$('#c16ac739-1b5c-45db-a007-5f7fe6441a2e').focus(function() {
