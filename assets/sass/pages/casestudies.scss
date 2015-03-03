@@ -402,6 +402,13 @@ em {
 
 }
 
+@include respond-max( $mq-medium ) {
+
+	.related__study {
+		margin-bottom: $line-height;
+	}
+
+}
 
 @include respond-min( $mq-medium ) {
 

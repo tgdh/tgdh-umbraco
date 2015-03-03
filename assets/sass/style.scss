@@ -57,6 +57,7 @@ Authors: TGDH
 @import "modules/article.scss";
 @import "modules/magnific.scss";
 @import "modules/umbraco-forms.scss";
+@import "modules/tile-overlay.scss";
 
 /* PLUGIN
 =========================================================== */
@@ -76,5 +77,6 @@ Authors: TGDH
 @import "pages/portfolio.scss";
 @import "pages/about.scss";
 @import "pages/news.scss";
-
+@import "pages/message-sent.scss";
+@import "pages/not-found.scss";
 

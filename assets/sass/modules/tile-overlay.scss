@@ -1,0 +1,95 @@
+/* ===========================================================
+
+	#TILE OVERLAY
+
+=========================================================== */
+
+.tile-overlay {
+	position: relative;
+}
+
+.tile__content {
+	color: #fff;
+	position: absolute;
+	display: block;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+.tile__title {
+	color: #fff;
+}
+
+.no-touch {
+
+	.tile-overlay {
+
+		&:before {
+			content: "";
+			background: #000;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			opacity: 0;
+			transition: opacity $speed ease;
+		}
+
+		&:hover:before {
+			opacity: .5;
+		}
+
+	}
+
+	.tile__content {
+		top: 50%;
+		transform: translateY( -50% );
+		text-align: center;
+	}
+
+	.tile__title {
+		opacity: 0;
+		transition: opacity $speed ease;
+	}
+
+	.tile__title {
+		transform: scale(.7);
+		transition: opacity .5s ease, transform .4s ease;
+	}
+
+
+	.tile-overlay:hover {
+
+		.tile__title {
+			opacity: 1;
+			transform: translate(0) scale(1);
+		}
+
+	}
+
+}
+
+.touch {
+
+	.tile-overlay {
+
+		.tile__title {
+			text-align: left;
+			padding-bottom: 0;
+		}
+
+		.tile__content {
+			bottom: 0;
+			padding: 1rem;
+			background: rgba(0,0,0,.6);
+
+			&:before {
+				opacity: .5;
+			}
+		}
+	}
+
+}

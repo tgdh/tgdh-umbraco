@@ -105,7 +105,6 @@
 
 	.portfolio-tile__subheading {
 		transform: scale(.8);
-		transition: opacity $speed ease, transform .7s ease;
 		transition: opacity .5s ease .2s, transform .8s ease .2s;
 	}
 
