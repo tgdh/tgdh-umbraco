@@ -64,25 +64,32 @@
 	}
 }
 
+.no-rgba.no-touch {
+
+	.portfolio-tile:hover:before {
+		background: url(/assets/img/transparent-black.png) repeat;
+	}
+
+}
+
 .no-touch {
 
 	.portfolio-tile {
 
 		&:before {
 			content: "";
-			background: #000;
+			background: transparent;
 			position: absolute;
 			top: 0;
 			right: 0;
 			bottom: 0;
 			left: 0;
 
-			opacity: 0;
-			transition: opacity $speed ease;
+			transition: background $speed ease;
 		}
 
 		&:hover:before {
-			opacity: .5;
+			background: rgba(0,0,0,0.5);
 		}
 
 	}
@@ -94,18 +101,22 @@
 
 	.portfolio-tile__heading,
 	.portfolio-tile__subheading {
+		visibility: hidden;
 		opacity: 0;
-		transition: opacity $speed ease;
 	}
 
 	.portfolio-tile__heading {
 		transform: scale(.7);
-		transition: opacity .5s ease, transform .4s ease;
+		transition: opacity .5s ease, 
+					visibility .5s ease, 
+					transform .4s ease;
 	}
 
 	.portfolio-tile__subheading {
 		transform: scale(.8);
-		transition: opacity .5s ease .2s, transform .8s ease .2s;
+		transition: opacity .5s ease .2s, 
+					visibility .5s ease .2s, 
+					transform .8s ease .2s;
 	}
 
 	.portfolio-tile:hover {
@@ -113,6 +124,7 @@
 		.portfolio-tile__heading,
 		.portfolio-tile__subheading {
 			opacity: 1;
+			visibility: visible;
 			transform: translate(0) scale(1);
 		}
 

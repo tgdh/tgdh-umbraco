@@ -21,18 +21,38 @@
 	z-index: 1;
 }
 
+.no-rgba {
+
+	.cover--dark:after {
+		z-index: 1;
+		background: url(/assets/img/transparent-black-20.png) repeat;
+	}
+
+}
+
 .cover {
 	background: $dark--1 center center;
 	background-size: cover;
 }
 
+.cover__content {
+	position: relative;
+	z-index: 10;
+}
+
 .csstransforms {
 
 	.cover__content {
-		position: relative;
 		top: 40%;
 		transform: translateY(-50%);
-		z-index: 2;
+	}
+
+}
+
+.no-csstransforms {
+
+	.cover__content {
+		top: 20%;
 	}
 
 }

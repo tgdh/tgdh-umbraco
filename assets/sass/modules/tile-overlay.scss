@@ -27,19 +27,18 @@
 
 		&:before {
 			content: "";
-			background: #000;
+			background: transparent;
 			position: absolute;
 			top: 0;
 			right: 0;
 			bottom: 0;
 			left: 0;
 
-			opacity: 0;
-			transition: opacity $speed ease;
+			transition: background $speed ease;
 		}
 
 		&:hover:before {
-			opacity: .5;
+			background: rgba(0,0,0,0.5);
 		}
 
 	}
@@ -51,23 +50,31 @@
 	}
 
 	.tile__title {
+		visibility: hidden;
 		opacity: 0;
-		transition: opacity $speed ease;
-	}
-
-	.tile__title {
 		transform: scale(.7);
-		transition: opacity .5s ease, transform .4s ease;
+		transition: opacity .5s ease,
+					visibility .5s ease,
+					transform .4s ease;
 	}
 
 
 	.tile-overlay:hover {
 
 		.tile__title {
+			visibility: visible;
 			opacity: 1;
 			transform: translate(0) scale(1);
 		}
 
+	}
+
+}
+
+.no-rgba.no-touch {
+
+	.tile-overlay:hover:before {
+		background: url(/assets/img/transparent-black.png) repeat;
 	}
 
 }
@@ -87,6 +94,7 @@
 			background: rgba(0,0,0,.6);
 
 			&:before {
+				visibility: visible;
 				opacity: .5;
 			}
 		}

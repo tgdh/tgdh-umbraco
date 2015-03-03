@@ -114,19 +114,18 @@
 
 		&:before {
 			content: "";
-			background: #000;
+			background: transparent;
 			position: absolute;
 			top: 0;
 			right: 0;
 			bottom: 0;
 			left: 0;
 
-			opacity: 0;
-			transition: opacity $speed ease;
+			transition: background $speed ease;
 		}
 
 		&:hover:before {
-			opacity: .5;
+			background: rgba(0,0,0,0.5);
 		}
 
 	}
@@ -144,25 +143,29 @@
 
 	.tile__heading,
 	.tile__tags {
+		visibility: hidden;
 		opacity: 0;
-		transition: opacity $speed ease;
 	}
 
 	.tile__heading {
 		transform: scale(.7);
-		transition: opacity .5s ease, transform .4s ease;
+		transition: opacity .5s ease, 
+					visibility .5s ease, 
+					transform .4s ease;
 	}
 
 	.tile__tags {
 		transform: scale(.8);
-		transition: opacity $speed ease, transform .7s ease;
-		transition: opacity .5s ease .2s, transform .8s ease .2s;
+		transition: opacity .5s ease .2s, 
+					visibility .5s ease .2s, 
+					transform .8s ease .2s;
 	}
 
 	.resource__tile:hover {
 
 		.tile__heading,
 		.tile__tags {
+			visibility: visible;
 			opacity: 1;
 			transform: translate(0) scale(1);
 		}
@@ -175,6 +178,14 @@
 			font-size: 5.37477rem;
 		}
 
+	}
+
+}
+
+.no-rgba.no-touch {
+
+	.resource__tile:hover:before {
+		background: url(/assets/img/transparent-black.png) repeat;
 	}
 
 }
