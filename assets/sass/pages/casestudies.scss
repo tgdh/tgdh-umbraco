@@ -56,10 +56,16 @@
 	font-weight: 200;
 	padding: 1rem 2rem;
 	color: #738d8b;
+	transition: background $speed ease;
+
 	&:hover {
 		color: #738d8b;
 		background: #dfe5e5;
-	};
+	}
+
+	i {
+		font-size: .6rem;
+	}
 }
 
 .resource__tile {
