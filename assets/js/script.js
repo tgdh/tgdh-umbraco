@@ -96,7 +96,7 @@
 		if (Modernizr.mq('only screen and (min-width: 37.5em)')) {
 			map.css({
 				'height': mapH,
-				'min-height': $('.page__content').outerHeight()
+				'min-height': $('.site__content').outerHeight()
 			});
 		}
 
