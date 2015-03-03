@@ -37,6 +37,20 @@
 	z-index: 10;
 }
 
+.button--load {
+	width: 100%;
+	display: block;
+	border-radius: 0;
+	background-color: $yellow--1;
+	transition: color $speed ease, background $speed ease;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		background-color: $dark--5;
+	}
+}
+
 .no-touch {
 
 	.portfolio-tile {
