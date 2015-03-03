@@ -274,6 +274,48 @@
 
 	}
 
+	var portfolioItemScripts = function() {
+
+	    $('.magnific-js').magnificPopup({
+	        delegate: 'a',
+	        type: 'image',
+	        closeOnContentClick: false,
+	        closeBtnInside: false,
+	        mainClass: 'mfp-with-zoom mfp-img-mobile',
+	        image: {
+	            verticalFit: true,
+	            titleSrc: function(item) {
+	                return item.el.attr('title');
+	            }
+	        },
+	        gallery: {
+	            enabled: true
+	        },
+	        zoom: {
+	            enabled: true,
+	            duration: 300, // don't foget to change the duration also in CSS
+	            opener: function(element) {
+	                return element.find('img');
+	            }
+	        }
+	    });
+
+	    var carousel = $('.tile-slide-js');
+	    carousel.owlCarousel({
+	        items: 1,
+	        loop: true,
+	        nav: true,
+	        dots: true,
+	        dotsContainer: ".controls-js",
+	        autoplay: true,
+	        animateOut: "fadeOut",
+	        navText: ['<button class="page page--prev"> <i class="ico-arrow-left"></i> </button>','<button class="page page--next"> <i class="ico-arrow-right"></i> </button>'],
+
+
+	    });
+
+	}
+
 
 /* ===========================================================
 
@@ -304,6 +346,10 @@
 		coffeeScript();
 		filterButton();
 		triggerAnimations();
+
+		if( $html.hasClass('doc--portfolioitem') ) {
+			portfolioItemScripts();
+		}
 
 	});
 
