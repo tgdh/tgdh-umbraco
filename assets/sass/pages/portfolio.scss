@@ -608,7 +608,8 @@
 	position: relative;
 }
 
-.tile-open:after {
+.tile-open:after,
+.tile-close:after {
 	content: "";
 	border: solid transparent;
 	height: 0;
@@ -622,30 +623,20 @@
 	pointer-events: none;
 	border-bottom-color: #e8e8e8;
 	border-width: 3rem;
-
-	animation: popIn 1s;
-	animation-fill-mode: forwards; 
 	z-index: 0;
+
+	animation-duration: 1s;
+	animation-fill-mode: forwards; 
+}
+
+.tile-open:after {
+	transform: translate3D( 0, 6rem, 0 );
+	animation-name: popIn; 
 }
 
 .tile-close:after {
-	content: "";
-	border: solid transparent;
-	height: 0;
-	width: 0;
-	position: absolute;
-	left: 50%;
-	bottom: -5px;
-	margin-left: -3rem;
 	transform: translate3D( 0, 0, 0 );
-
-	pointer-events: none;
-	border-bottom-color: white;
-	border-width: 3rem;
-	
-	animation: popOut 1s;
-	animation-fill-mode: forwards; 
-	z-index: 0;
+	animation-name: popOut;
 }
 
 .large-tile {
