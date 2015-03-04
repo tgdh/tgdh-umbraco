@@ -22,6 +22,12 @@
 	width: initial;
 }
 
+.scroll-to-fixed-fixed {
+	left: 0 !important;
+	right: 0 !important;
+	width: 100% !important;
+}
+
 @include respond-max( $mq-large ) {
 
 	.nav__list {
