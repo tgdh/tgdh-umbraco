@@ -16,7 +16,6 @@
 	opacity: 0;
 }
 
-
 .ico-arrow-right--pagination {
 	padding-left: 1rem;
 	font-size: 1.2rem;
@@ -411,6 +410,15 @@ em {
 .yellow {
 	color: yellow;
 }
+
+.tile--result {
+
+	.button + .button {
+		margin-right: $line-height;
+	}
+
+}
+
 @include respond-max( $mq-small ) {
 
 	.float--right {

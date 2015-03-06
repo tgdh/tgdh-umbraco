@@ -43,7 +43,7 @@
 .csstransforms {
 
 	.cover__content {
-		top: 40%;
+		top: 50%;
 		transform: translateY(-50%);
 	}
 
@@ -74,6 +74,14 @@
 	text-transform: uppercase;
 	font-weight: 700;
 	padding-bottom: 1em;
+}
+
+.cover--guideposts {
+
+	.wrap {
+		max-width: 100rem;
+	}
+
 }
 
 /* cover post */

@@ -310,12 +310,14 @@
 }
 
 .sector-button {
+	font-size: 1.4rem;
 	position: relative;
 	border-color: $green--1;
 	padding-right: 6rem;
 	margin-bottom: 1rem;
 	margin-right: 1rem;
-	text-transform:capitalize;
+	font-weight: 700;
+	text-transform: uppercase;
 	.ico-cross {
 		transition: background $speed ease, border $speed ease, color $speed ease;
 		background: $green--1;
@@ -394,12 +396,14 @@
 }
 
 .category-button {
+	font-size: 1.4rem;
 	position: relative;
 	border-color: $pink--1;
 	padding-right: 6rem;
 	margin-bottom: 1rem;
 	margin-right: 1rem;
-	text-transform:capitalize;
+	font-weight: 700;
+	text-transform: uppercase;
 	.ico-cross {
 		transition: background $speed ease, border $speed ease, color $speed ease;
 		background: $pink--1;
@@ -407,12 +411,14 @@
 }
 
 .client-button {
+	font-size: 1.4rem;
 	position: relative;
 	border-color: $yellow--1;
 	padding-right: 6rem;
 	margin-bottom: 1rem;
 	margin-right: 1rem;
-	text-transform:capitalize;
+	font-weight: 700;
+	text-transform: uppercase;
 	.ico-cross {
 		transition: background $speed ease, border $speed ease, color $speed ease;
 		background: $yellow--1;
