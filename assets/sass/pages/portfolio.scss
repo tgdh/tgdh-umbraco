@@ -138,10 +138,12 @@
 		font-size: 1.8rem;
 		text-align: left;
 		padding-bottom: 0;
+		margin-bottom: 1rem;
 	}
 
 	.portfolio-tile__subheading {
 		line-height: 1;
+		text-align: left;
 	}
 
 	.portfolio-tile__wrap {
@@ -470,6 +472,7 @@
 
 .filter--wrap {
 	margin-bottom: 2rem;
+	
 }
 
 .active-filters {
