@@ -49,7 +49,7 @@
 		    items:1,
 		    loop: true,
 		    nav: true,
-		    autoplay: false,
+		    autoplay:true,
 		    navContainer: $carousel,
 		    navText: ['<button class="page page--prev"> <i class="ico-arrow-left"></i> </button>','<button class="page page--next"> <i class="ico-arrow-right"></i> </button>'],
 		    dots: true,
@@ -67,8 +67,15 @@
 		    },
 		    dotsContainer: $carousel.find('.pagination'),
 		    animateOut: 'fadeOut'
-
 		});
+
+
+	    $($carousel).find('.page').on('click',function(){
+			$carousel.trigger('autoplay.stop.owl')
+
+			console.log('stop owl');
+		});
+
 	}
 
 	var reviewCarousel = function(){
