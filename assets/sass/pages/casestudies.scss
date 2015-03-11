@@ -39,6 +39,27 @@
 	}
 }
 
+@include respond-min( $mq-small ) {
+
+	.doc--casestudy {
+
+		.text-tile {
+
+			.button + .button {
+				margin-right: $line-height;
+			}
+
+		}
+
+	}
+
+	.case-study__item {
+		width: 50%;
+		float: left;
+		font-size: 0;
+	}
+
+}
 
 .owl-dot {
 	width: 1.2rem;
@@ -452,11 +473,7 @@ em {
 		margin-left: -1px!important;
 		transform: translateX(1px);
 	}
-	.resource__tile {
-		width: 50%;
-		margin-left: -1px!important;
-		transform: translateX(1px);
-	}
+
 	.related__study {
 		/*@include column(4);*/
 		width: 33.33333333%;

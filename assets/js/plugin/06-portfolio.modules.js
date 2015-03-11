@@ -216,7 +216,7 @@
                             if (sectorArr.length > 0) {
                                 for (i = 0; i < sectorArr.length; i++) {
                                     if ($.inArray(val.toLowerCase().replace(/\s/g, "_"), sectorArr) > -1) {
-                                        console.log("NONE");
+//                                        console.log("NONE");
                                     } else {
                                         sectorArr.push(val.toLowerCase().replace(/\s/g, "_"));
                                         break;
@@ -248,11 +248,11 @@
                         } else if (filter === "client") {
 
                             //console.log("Add to client");
-                            console.log("Client string: " + clientArr);
+//                            console.log("Client string: " + clientArr);
                             if (clientArr.length > 0) {
                                 for (i = 0; i < clientArr.length; i++) {
                                     if ($.inArray(val.toLowerCase().replace(/\s/g, "_"), clientArr) > -1) {
-                                        console.log("NONE");
+//                                        console.log("NONE");
                                     } else {
                                         clientArr.push(val.toLowerCase().replace(/\s/g, "_").replace(/&/g,"%26"));
                                         break;
@@ -349,9 +349,9 @@
                     } else if (clientArr.length > 0) {
                         link = link + '&' + client + temp.client;
                     }
-                    console.log(client);
+//                    console.log(client);
                     // console.log(temp.client.replace(/&/g,"%26"));
-                    console.log(link);
+//                    console.log(link);
                     // window.location = link;
                 } else {
                     // default no query string, just builds the link and goes
@@ -364,10 +364,11 @@
 
 
                 window.location = link;
-                console.log(link);
+//                console.log(link);
             }
 
-            $(window).load(function() {
+                
+            $(document).ready(function() {
                 $('#sectorSelect').selectOrDie({
                     size: 10,
                     customClass: "sector-select",
@@ -709,7 +710,7 @@
                 link = link + '&' + page + temp.currentPage
             }
 
-            console.log(link);
+//            console.log(link);
 
             history.pushState(null, '', link);
         },

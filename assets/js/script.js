@@ -100,7 +100,7 @@
 
 			
 
-		if (Modernizr.mq('only screen and (min-width: 37.5em)')) {
+		if (matchMedia('only screen and (min-width: 37.5em)').matches) {
 			map.css({
 				'height': mapH,
 				'min-height': $('.site__content').outerHeight()
@@ -108,31 +108,12 @@
 		}
 
 	}
-	var portfolio = function() {
-		checkboxFilter.init();
-
-		$('#portfolio').mixItUp({
-			layout: {
-				containerClassFail: 'grid--empty'
-			},
-			selectors: {
-				target: '.grid__item'
-			},
-			controls: {
-				enable: false // we won't be needing these
-			},
-			animation: {
-				easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
-				duration: 600
-			}
-		});
-	}
 
 	var caseStudy = function() {
 		var $tile = $('.case-study__section'),
 			$colWidth;
 
-		if (Modernizr.mq('only screen and (max-width: 799px)')) {
+		if (matchMedia('only screen and (max-width: 799px)').matches) {
 			$colWidth = $(window).width();
 			// console.log( "colWidth is: " +  $colWidth );
 		} else {
@@ -153,15 +134,7 @@
 				shelfOrder: 1
 			}
 		});
-		$('.resource__wrap').masonry({
-			itemSelector: $('.resource__tile'),
-			columnWidth: $colWidth,
-			isAnimated: false,
-			layoutPriorities: {
-				upperPosition: 1,
-				shelfOrder: 1
-			}
-		});
+
 
 	}
 
@@ -335,6 +308,7 @@
 	# INIT
 
 =========================================================== */
+
 	$(window).ready(function(){
 
 	    caseStudy();
