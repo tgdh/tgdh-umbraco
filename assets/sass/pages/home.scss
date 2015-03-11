@@ -95,6 +95,7 @@ textarea {
 	border-radius: 50%;
 	transform: translateX(-50%);
 	transition: background $speed ease;
+	z-index: 1;
 
 	i {
 /*		color: $yellow--1;*/

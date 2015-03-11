@@ -12,6 +12,18 @@
 
 }
 
+.portfolio-tile__heading {
+	font-size: 2rem;
+}
+
+@include respond-min( $mq-large ) {
+
+	.portfolio-tile__heading {
+		font-size: 2.6rem;
+	}	
+
+}
+
 .portfolio-tile__heading,
 .portfolio-tile__subheading {
 	color: #fff;
@@ -48,6 +60,7 @@
 	left: 0;
 	right: 0;
 	z-index: 10;
+	padding: 10%;
 }
 
 .button--load {
@@ -291,6 +304,7 @@
 .tile-slide {
 	border: 1rem solid #f6f6f6;
 	border-radius: 0.5rem;
+	background-color: #f6f6f6;
 }
 
 .module-title {
@@ -496,7 +510,7 @@
 
 .filter--open {
 	.portfolio-filter--l {
-
+		
 	}
 
 	.filter__button span {

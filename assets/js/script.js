@@ -194,15 +194,33 @@
 	}
 
 	var filterButton = function(){
-		$('#filterButton').click(function() {
-			console.log("HELLO");
+		var menu = $('#filterMenu');
+
+		var animateToggle = function() {
 			$('.portfolio-filter--l').css('overflow', 'hidden');
-			$('#filterMenu').cssAnimateAuto('height 0.5s ease', function() {
+			menu.cssAnimateAuto('height 0.3s ease', function() {
 				if( $('html').hasClass('filter--open') ){
 					$('.portfolio-filter--l').css('overflow', 'visible');
 				}
-
 			});
+		}
+
+		if( $html.hasClass("ie8") || $html.hasClass("ie9") ) {
+			menu.css({
+				'height': 'auto',
+				'display': 'none',
+				'overflow': 'visible'
+			});
+		}
+
+		$('#filterButton').click(function() {
+//			console.log("HELLO");
+
+			if( $html.hasClass("ie8") || $html.hasClass("ie9") ) {
+				menu.toggle();
+			} else {
+				animateToggle();
+			}
 		});
 	}
 

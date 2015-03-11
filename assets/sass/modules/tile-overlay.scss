@@ -21,6 +21,18 @@
 	color: #fff;
 }
 
+@include respond-max( $mq-large ) {
+
+	.no-touch {
+
+		.tile__title {
+			font-size: 2rem;
+		}
+
+	}
+
+}
+
 .no-touch {
 
 	.tile-overlay {
@@ -47,6 +59,7 @@
 		top: 50%;
 		transform: translateY( -50% );
 		text-align: center;
+		padding: 10%;
 	}
 
 	.tile__title {
