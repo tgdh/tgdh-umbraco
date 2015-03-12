@@ -271,7 +271,8 @@
 	var triggerAnimations = function() {
 
 		wow = new WOW({
-			offset:       200
+			offset: 200,
+			mobile: false
 		})
 		wow.init();
 

@@ -374,7 +374,8 @@ b {
 	float: left;
 }
 
-.ico-text {
+.ico-text,
+.graph-text {
 	display: none;
 }
 
@@ -406,7 +407,8 @@ b {
 		border-radius: .4rem;
 		display: block;
 	}
-	.ico-text {
+	.ico-text,
+	.graph-text {
 		margin-left: 1rem;
 		display: inline-block;
 	}

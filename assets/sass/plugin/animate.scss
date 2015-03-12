@@ -9,123 +9,180 @@ Copyright (c) 2014 Daniel Eden
 
 
 
-@include respond-min( $mq-small ) {
+.animated {
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
 
-  .animated {
-    -webkit-animation-duration: 0.8s;
-            animation-duration: 0.8s;
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-  }
+@-webkit-keyframes bounceInUp {
+0%, 60%, 75%, 90%, 100% {
+  -webkit-transition-timing-function: cubic-bezier(0.216, 0.610, 0.355, 1.000);
+          transition-timing-function: cubic-bezier(0.216, 0.610, 0.355, 1.000);
+}
 
-  @-webkit-keyframes bounceInUp {
-  0%, 60%, 75%, 90%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.216, 0.610, 0.355, 1.000);
-            transition-timing-function: cubic-bezier(0.216, 0.610, 0.355, 1.000);
-  }
+0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100px, 0);
+          transform: translate3d(0, 100px, 0);
+}
 
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100px, 0);
-            transform: translate3d(0, 100px, 0);
-  }
-
-  60% {
-    opacity: 1;
+60% {
+  opacity: 1;
 /*    -webkit-transform: translate3d(0, 80px, 0);
-            transform: translate3d(0, 80px, 0);*/
-  }
+          transform: translate3d(0, 80px, 0);*/
+}
 
-  75% {
+75% {
 /*    -webkit-transform: translate3d(0, 50px, 0);
-            transform: translate3d(0, 50px, 0);*/
-  }
+          transform: translate3d(0, 50px, 0);*/
+}
 
-  90% {
+90% {
 /*    -webkit-transform: translate3d(0, 30px, 0);
-            transform: translate3d(0, 30px, 0);*/
-  }
+          transform: translate3d(0, 30px, 0);*/
+}
 
-  100% {
-    -webkit-transform: translate3d(0, 20px, 0);
-            transform: translate3d(0, 20px, 0);
-  }
+100% {
+  -webkit-transform: translate3d(0, 20px, 0);
+          transform: translate3d(0, 20px, 0);
+}
 }
 
 @keyframes bounceInUp {
-  0%, 60%, 75%, 90%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.216, 0.610, 0.355, 1.000);
-            transition-timing-function: cubic-bezier(0.216, 0.610, 0.355, 1.000);
-  }
+0%, 60%, 75%, 90%, 100% {
+  -webkit-transition-timing-function: cubic-bezier(0.216, 0.610, 0.355, 1.000);
+          transition-timing-function: cubic-bezier(0.216, 0.610, 0.355, 1.000);
+}
 
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100px, 0);
-            transform: translate3d(0, 100px, 0);
-  }
+0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100px, 0);
+          transform: translate3d(0, 100px, 0);
+}
 
-  60% {
-    opacity: 1;
+60% {
+  opacity: 1;
 /*    -webkit-transform: translate3d(0, 80px, 0);
-            transform: translate3d(0, 80px, 0);*/
-  }
+          transform: translate3d(0, 80px, 0);*/
+}
 
-  75% {
+75% {
 /*    -webkit-transform: translate3d(0, 50px, 0);
-            transform: translate3d(0, 50px, 0);*/
-  }
+          transform: translate3d(0, 50px, 0);*/
+}
 
-  90% {
+90% {
 /*    -webkit-transform: translate3d(0, 30px, 0);
-            transform: translate3d(0, 30px, 0);*/
-  }
+          transform: translate3d(0, 30px, 0);*/
+}
 
-  100% {
-    -webkit-transform: translate3d(0, 20px, 0);
-            transform: translate3d(0, 20px, 0);
-  }
+100% {
+  -webkit-transform: translate3d(0, 20px, 0);
+          transform: translate3d(0, 20px, 0);
+}
 }
 
 .bounceInUp {
-  -webkit-animation-name: bounceInUp;
-          animation-name: bounceInUp;
+-webkit-animation-name: bounceInUp;
+        animation-name: bounceInUp;
 }
 
 @-webkit-keyframes zoomIn {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-            transform: scale3d(.3, .3, .3);
-  }
+0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+          transform: scale3d(.3, .3, .3);
+}
 
-  50% {
-    opacity: 1;
-  }
+50% {
+  opacity: 1;
+}
 }
 
 @keyframes zoomIn {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-            transform: scale3d(.3, .3, .3);
-  }
+0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+          transform: scale3d(.3, .3, .3);
+}
 
-  50% {
-    opacity: 1;
-  }
+50% {
+  opacity: 1;
+}
 }
 
 .zoomIn {
-    -webkit-animation-name: zoomIn;
-        animation-name: zoomIn;
+  -webkit-animation-name: zoomIn;
+      animation-name: zoomIn;
+}
+
+@-webkit-keyframes changeWidthright {
+
+0% {
+  opacity: 1;
+  min-width: 5rem;
+  width: 5rem;
+}
+
+25% {
+  opacity: 1;
+
+}
+
+50% {
+opacity: 1;
+}
+
+75% {
+opacity: 1;
+}
+
+100% {
+opacity: 1;
+width: 100%;
+}
+}
+
+@keyframes changeWidthright {
+
+0% {
+  opacity: 1;
+  min-width: 5em;
+  width: 5rem;
+}
+
+25% {
+  opacity: 1;
+
+}
+
+50% {
+opacity: 1;
+}
+
+75% {
+opacity: 1;
+}
+
+100% {
+opacity: 1;
+width: 100%;
+}
+}
+
+.changeWidthright {
+  -webkit-animation-name: changeWidthright;
+      animation-name: changeWidthright;
 }
 
 @-webkit-keyframes changeWidthright {
 
   0% {
     opacity: 1;
-    min-width: 5rem;
-    width: 5rem;
+    min-width: 15rem;
+    width: 15rem;
   }
 
   25% {
@@ -134,16 +191,16 @@ Copyright (c) 2014 Daniel Eden
   }
 
   50% {
-  opacity: 1;
+	opacity: 1;
   }
 
   75% {
-  opacity: 1;
+	opacity: 1;
   }
 
   100% {
-  opacity: 1;
-  width: 100%;
+	opacity: 1;
+	width: 100%;
   }
 }
 
@@ -151,8 +208,8 @@ Copyright (c) 2014 Daniel Eden
 
   0% {
     opacity: 1;
-    min-width: 5em;
-    width: 5rem;
+    min-width: 15rem;
+    width: 15rem;
   }
 
   25% {
@@ -161,81 +218,20 @@ Copyright (c) 2014 Daniel Eden
   }
 
   50% {
-  opacity: 1;
+	opacity: 1;
   }
 
   75% {
-  opacity: 1;
+	opacity: 1;
   }
 
   100% {
-  opacity: 1;
-  width: 100%;
+	opacity: 1;
+	width: 100%;
   }
 }
 
 .changeWidthright {
-    -webkit-animation-name: changeWidthright;
-        animation-name: changeWidthright;
-}
-
-	@-webkit-keyframes changeWidthright {
-
-	  0% {
-	    opacity: 1;
-	    min-width: 15rem;
-	    width: 15rem;
-	  }
-
-	  25% {
-	    opacity: 1;
-
-	  }
-
-	  50% {
-		opacity: 1;
-	  }
-
-	  75% {
-		opacity: 1;
-	  }
-
-	  100% {
-		opacity: 1;
-		width: 100%;
-	  }
-	}
-
-	@keyframes changeWidthright {
-
-	  0% {
-	    opacity: 1;
-	    min-width: 15rem;
-	    width: 15rem;
-	  }
-
-	  25% {
-	    opacity: 1;
-
-	  }
-
-	  50% {
-		opacity: 1;
-	  }
-
-	  75% {
-		opacity: 1;
-	  }
-
-	  100% {
-		opacity: 1;
-		width: 100%;
-	  }
-	}
-
-	.changeWidthright {
-	  	-webkit-animation-name: changeWidthright;
-	  			animation-name: changeWidthright;
-	}
-
+  	-webkit-animation-name: changeWidthright;
+  			animation-name: changeWidthright;
 }

@@ -107,6 +107,14 @@
 	font-size: 1.4rem;
 }
 
+@include respond-max( $mq-small ) {
+
+	.tile__tags {
+		display: none;
+	}
+
+}
+
 @include respond-min( $mq-medium ) {
 
 	.tile__tags {

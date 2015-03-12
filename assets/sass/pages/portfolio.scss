@@ -4,6 +4,14 @@
 
 =========================================================== */
 
+.doc--portfoliofolder {
+
+	body {
+		overflow-x: hidden;
+	}
+
+}
+
 .doc--portfolioitem {
 
 	.tile-slide {
@@ -294,15 +302,6 @@
 
 .tile-slide--wrap {
 	position: relative;
-}
-
-.tile-slide {
-
-	.owl-item {
-		margin-left: -1px !important;
-		transform: translateX(1px);
-	}
-
 }
 
 .carousel__controls {
@@ -683,6 +682,7 @@
 	max-height: 0;
 	overflow: hidden;
 	z-index: 2;
+	transform: translate3D(0,0,0);
 	transition: max-height 0.6s ease;
 }
 
