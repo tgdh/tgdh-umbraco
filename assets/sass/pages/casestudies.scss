@@ -103,6 +103,18 @@
 	font-size: 2.56289rem;
 }
 
+.tile__tags {
+	font-size: 1.4rem;
+}
+
+@include respond-min( $mq-medium ) {
+
+	.tile__tags {
+		font-size: 1.8rem;
+	}
+
+}
+
 .tile__heading,
 .tile__tags {
 	color: #fff;
@@ -183,7 +195,7 @@
 					transform .8s ease .2s;
 	}
 
-	.resource__tile:hover {
+	.resource__tile:hover, {
 
 		.tile__heading,
 		.tile__tags {

@@ -296,6 +296,15 @@
 	position: relative;
 }
 
+.tile-slide {
+
+	.owl-item {
+		margin-left: -1px !important;
+		transform: translateX(1px);
+	}
+
+}
+
 .carousel__controls {
 	position: absolute;
 	right: 0;
@@ -510,7 +519,7 @@
 
 .filter--open {
 	.portfolio-filter--l {
-		
+
 	}
 
 	.filter__button span {

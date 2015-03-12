@@ -99,8 +99,7 @@
 			mapH 	= windowH - ( header.outerHeight() + footer.outerHeight() );
 
 			
-
-		if (matchMedia('only screen and (min-width: 37.5em)').matches) {
+		if( $(window).width() > 600 ) {
 			map.css({
 				'height': mapH,
 				'min-height': $('.site__content').outerHeight()
@@ -113,7 +112,7 @@
 		var $tile = $('.case-study__section'),
 			$colWidth;
 
-		if (matchMedia('only screen and (max-width: 799px)').matches) {
+		if( $(window).width() < 799 ) {
 			$colWidth = $(window).width();
 			// console.log( "colWidth is: " +  $colWidth );
 		} else {

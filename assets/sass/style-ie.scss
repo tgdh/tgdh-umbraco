@@ -1,3 +1,8 @@
 $old-ie: true;
 
 @import "style.scss";
+
+.resource-item.umbraco,
+.resource-item.socialmedia {
+	width: 50%;
+}

@@ -25,7 +25,7 @@
 .scroll-to-fixed-fixed {
 	left: 0 !important;
 	right: 0 !important;
-	width: 100% !important;
+	width: auto !important;
 }
 
 @include respond-max( $mq-large ) {

@@ -777,9 +777,7 @@
                 dotsContainer: ".controls-js",
                 autoplay: true,
                 animateOut: "fadeOut",
-                navText: ['<button class="page page--prev"> <i class="ico-arrow-left"></i> </button>','<button class="page page--next"> <i class="ico-arrow-right"></i> </button>'],
-
-
+                navText: ['<button class="page page--prev"> <i class="ico-arrow-left"></i> </button>','<button class="page page--next"> <i class="ico-arrow-right"></i> </button>']
             });
         },
         magnificPopup: function() {

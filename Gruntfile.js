@@ -115,7 +115,7 @@ module.exports = function (grunt) {
                     authKey: 'key2'
                 },
                 src: 'assets/build',
-                dest: 'dev.tgdh.co.uk/assets/',
+                dest: 'umbraco.tgdh.co.uk/assets/',
                 exclusions: ['img/*', 'fonts/', '**/.DS_Store', '**/Thumbs.db'],
                 keep: ['/img/*','/fonts/']
               }
