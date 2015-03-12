@@ -56,9 +56,8 @@
 		    onInitialized: function() {
 		    	var $pageDown = $('<a>', {
 		    		href: 	'#header',
-		    		class: 	'page-down button--secondary'	,
+		    		'class': 	'page-down button--secondary',
 		    		html: 	'<i class="ico-arrow-down"></i>'
-		    		
 		    	});
 
 		    	$pageDown.appendTo( $carousel );
@@ -151,7 +150,7 @@
 
 	var coffeeScript = function() {
 
-		$('#recaptcha_area').addClass('table--scroll');
+//		$('#recaptcha_area').addClass('table--scroll');
 
 		$('[data-link="#coffee-form"]').magnificPopup({
 				type: 'inline',

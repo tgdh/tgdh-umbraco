@@ -768,17 +768,27 @@
         },
 
         tileSlide: function() {
+            var totalWidth = 0,
+                stage;
+
             var carousel = $('.tile-slide-js');
             carousel.owlCarousel({
                 items: 1,
                 loop: true,
                 nav: true,
                 dots: true,
+                margin: 5,
                 dotsContainer: ".controls-js",
                 autoplay: true,
                 animateOut: "fadeOut",
                 navText: ['<button class="page page--prev"> <i class="ico-arrow-left"></i> </button>','<button class="page page--next"> <i class="ico-arrow-right"></i> </button>']
             });
+
+            if( carousel.length > 0 ) {
+                stage = carousel.find('.owl-stage');
+                totalWidth = $(stage).css('width').replace(/[^-\d\.]/g, '') + 1;
+                stage.css('width', totalWidth);
+            }
         },
         magnificPopup: function() {
             $('.magnific-js').magnificPopup({
