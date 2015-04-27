@@ -10,7 +10,7 @@
     right: 0;
     color: #fff;
     font-size: 1.6rem;
-    z-index: 5;
+    z-index: -1;
     top: 50%;
     margin-top: -.8rem;
     margin-right: 1.8rem;
@@ -104,17 +104,16 @@
     .sector-select:before
         {
             background: $green--1;
-            z-index: 1;
+            z-index: -1;
         }
-    .cat-select:before
-        {
+    .cat-select:before {
             background: $pink--1;
-            z-index: 2;
+            z-index: -1;
         }
     .client-select:before
         {
             background: $yellow--1;
-            z-index: 3;
+            z-index: -1;
         }
 
     .sod_select:hover {
@@ -123,26 +122,20 @@
             background: $dark--5;
         }
     }
-    .sector-select,
-    .sector-select
-        {
+    .sector-select {
             z-index: 3;
             .sod_list_wrapper {
                 z-index: 3;
             }
         }
-    .cat-select,
-    .cat-select
-        {
-            z-index: 2;
+    .cat-select {
+            z-index: 3;
             .sod_list_wrapper {
                 z-index: 2;
             }
         }
-    .client-select,
-    .client-select
-        {
-            z-index: 1;
+    .client-select {
+            z-index: 3;
             .sod_list_wrapper {
                 z-index: 1;
             }
@@ -215,7 +208,7 @@
             border-bottom-right-radius: 1rem;
             padding-top: 1rem;
             overflow: hidden;
-            z-index: -1;
+            z-index: -2;
         }
 
         /* Shows the option list (don't edit) */
