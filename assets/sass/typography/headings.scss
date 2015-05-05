@@ -14,7 +14,8 @@ h4,
 .alpha,
 .beta,
 .gamma,
-.delta {
+.delta,
+.epsilon {
 	font-weight: 800;
 	line-height: 1.1;
 	color: $grey--3;
@@ -22,7 +23,7 @@ h4,
 
 h5,
 h6,
-.epsilon,
+/*.epsilon,*/
 .zeta {
 	font-weight: 500;
 }

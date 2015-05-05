@@ -319,6 +319,40 @@
 
 	}
 
+	var homeCarousel  = function(){
+		var container = $('.home-tile-js');
+
+		container.owlCarousel({
+		    // stagePadding: 40,
+		    // autoWidth: true,
+		    loop: true,
+		    // margin: 30,
+		    // nav: false,
+		    // dots: false,
+		    responsive:{
+	        0:{
+	        	stagePadding: 30,
+	        	items: 1,
+	            nav:false,
+	            dots: false,
+	            autoWidth: false,
+	            margin: 10
+	        },
+	        500:{
+	        	stagePadding: 0,
+	        	// items: 2,
+	        	navContainer: ".home-tile-js",
+	        	navText: ['<button class="page page--prev"> <i class="ico-arrow-left"></i> </button>','<button class="page page--next"> <i class="ico-arrow-right"></i> </button>'],
+	            nav: true,
+	            margin: 0,
+	            dots: false,
+	            autoWidth: true,
+	            // margin: 10
+	        }
+	    }
+
+		});
+	}
 
 /* ===========================================================
 
@@ -338,6 +372,7 @@
 //		initFormValidation();
 
 		$('#header').scrollToFixed();
+		homeCarousel();
 
 	});
 

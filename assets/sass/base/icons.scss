@@ -33,6 +33,21 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.ico-bulb:before {
+	content: "\e622";
+}
+
+.ico-globe:before {
+	content: "\e623";
+}
+
+.ico-mug:before {
+	content: "\e624";
+}
+
+.ico-printer:before {
+	content: "\e625";
+}
 .ico-myspace:before {
 	content: "\e621";
 }

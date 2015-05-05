@@ -11,6 +11,269 @@
 		background: none;
 	}
 
+	.ico-bulb:before,
+	.ico-globe:before,
+	.ico-printer:before {
+	  position: absolute;
+	  margin-left: -3rem;
+	  color: $blue--1;
+	  font-size: 2rem;
+	}
+
+	.ico-mug {
+		font-size: 2rem;
+	}
+
+}
+
+.home-tile--wrap {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	.owl-item img {
+		width: initial;
+		margin: 0 auto;
+	}
+
+	.ico-twitter {
+		margin-right: 1rem;
+	}
+
+	.resource__tile {
+		/*width: initial;*/
+	}
+}
+
+.smaller {
+	font-size: 1.4rem;
+}
+.home-column--wrap {
+	margin-top: 8rem;
+	margin-bottom: 8rem;
+}
+
+.home-column {
+	/*@include column(4);*/
+	padding-left: 4rem;
+	margin-bottom: 4rem;
+	padding-right: 2rem;
+	/*padding-right: 5.5rem;*/
+}
+
+
+
+
+/*.home-tile-js {
+	.owl-item:nth-child(even) {
+		.home-tile {
+			background: #f66e2d;		
+		}
+	}
+}
+
+.home-tile-js {
+	.owl-item:nth-child(odd) {
+		.home-tile {
+			background: #f6f652;		
+		}
+	}
+}*/
+
+.home-tile--yellow {
+	background-color: #fad620;
+	color: white !important;
+		h2 {
+		color: white;
+	}
+}
+.home-tile--white {
+	background-color: #ffffff;
+	color: $grey--3;
+
+}
+.home-tile--pink {
+	background-color: #e5005b;
+	color: white !important;
+		h2 {
+		color: white;
+	}
+}
+.home-tile--green {
+	background-color: #42a94f;
+	color: white !important;
+		h2 {
+		color: white;
+	}
+}
+.home-tile--blue {
+	background-color: #34b5d0;
+	color: white !important;
+	h2 {
+		color: white;
+	}
+	.delta {
+		font-weight: 400;
+		line-height: 1.2;
+		color: white !important;
+	}
+	a {
+		color: white !important;
+		font-weight: bold;
+/*		display: block;
+		float: left;*/
+	}
+}
+
+.tweet-user-link {
+	position: relative;
+	display: block;
+	z-index: 2;
+}
+
+.home-tile__copy {
+	padding: 2.5rem;
+	color: white !important;
+
+	.home-tile__heading {
+		font-size: 3rem;
+	}
+}
+
+.home-tile--tweet {
+	overflow: hidden;
+	position: relative;
+	.home-tile__copy {
+		a {
+			position: relative;
+			z-index: 2;
+		}
+	}
+	.tweet--link {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		text-indent: -100%;
+	}
+}
+
+.home-tile {
+	width: 100%;
+	min-height: 35rem;
+/*	margin: 1rem;*/
+	float: left;
+	padding: 0;
+/*	padding: 2.5rem;
+	padding-bottom: 2rem;*/
+	/*margin-left: 2rem;*/
+	.ico-twitter {
+		vertical-align: middle;
+	}
+}
+
+.coffee-section {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+	.arrow-link {
+		margin-top: 0;
+	}
+}
+
+@include respond-min( 31.25em ) {
+	.home-tile {
+		width: 35rem !important;
+		margin-left: 1.5rem;
+
+	}
+
+	.home-tile--wrap {
+		.page--prev:hover,
+		.page--next:hover {
+			transition: background-color 0.3s ease, box-shadow 0.3s ease;
+			background-color: $light--2;
+			box-shadow: 0px 4px 0px 0px $light--3;
+		}
+		.page--prev,
+		.page--next {
+			background-color: $light--1;
+			position: absolute;
+			width: 5.4rem;
+			height: 6rem;
+			top: 50%;
+			box-shadow: 0px 4px 0px 0px $light--2;
+			z-index: 2;
+			margin-top: -3rem;
+			opacity: 0;
+			transition: opacity 0.6s ease;
+
+		}
+		.ico-arrow-left:before,
+		.ico-arrow-right:before {
+			font-size: 1.5rem;
+		}
+
+		.page--prev {
+			left: 0;
+			border-bottom-right-radius: 0.5rem;
+			border-top-right-radius: 0.5rem;
+
+		}
+
+		.page--next {
+			right: 0;
+			border-bottom-left-radius: 0.5rem;
+			border-top-left-radius: 0.5rem;
+		}
+	}
+	.home-tile--wrap:hover {
+		.page--prev,
+		.page--next {
+			opacity: 1;
+
+		}
+	}
+}
+
+@include respond-min( $mq-small ) {
+
+
+	.home-column {
+		@include column(4);
+		padding-left: 4rem;
+		/*padding-right: 5.5rem;*/
+		padding-right: 0;
+	}
+	.doc--home {
+
+		.ico-bulb:before,
+		.ico-globe:before,
+		.ico-printer:before {
+			margin-left: -4.5rem;
+			font-size: 3rem;
+		}
+	}
+	.coffee-section {
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+	}
+}
+
+@include respond-min( $mq-large ){
+
+	.home-column {
+		padding-right: 3.5rem;
+	}
+	.coffee-section {
+		padding-top: 10rem;
+		padding-bottom: 10rem;
+	}
+}
+
+@include respond-min( $mq-x-large ){
+	.coffee-section {
+		padding-top: 12rem;
+		padding-bottom: 12rem;
+	}
 }
 
 @include respond-max( $mq-large	 ) {
