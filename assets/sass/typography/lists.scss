@@ -18,20 +18,24 @@ li {
 	}
 }
 
+.page__content ul {
+	margin-left: $line-height * 2;
+}
+
 .page__content li {
 
 	position: relative;
 
 	&:before {
 		content: "";
-		width: .8rem;
-		height: .8rem;
+		width: .7rem;
+		height: .7rem;
 		border-radius: 50%;
 		background-color: $sec;
 		position: absolute;
 
 		left: -2rem;
-		top: .5em;
+		top: .6em;
 
 	}
 

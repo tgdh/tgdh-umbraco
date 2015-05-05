@@ -70,10 +70,14 @@
 	background-color: $yellow--1;
 	transition: color $speed ease, background $speed ease;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		color: #fff;
-		background-color: $dark--5;
+		background-color: $dark--1;
+	}
+
+	&:focus {
+		color: $dark--5;
+		background-color: $yellow--1;
 	}
 }
 
