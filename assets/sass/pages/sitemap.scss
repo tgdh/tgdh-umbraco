@@ -1,0 +1,26 @@
+/* ===========================================================
+
+	#SITEMAP
+
+=========================================================== */
+
+.sitemap {
+
+	.level-2 ul {
+		margin-left: $line-height * 2;
+	}
+
+	.level-2 > a {
+		font-weight: 700;
+	}
+
+	.level-2 ul a {
+		color: $text-colour;
+
+		&:hover,
+		&:focus {
+			color: $sec;
+		}
+	}
+
+}

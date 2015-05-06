@@ -5,19 +5,20 @@
 =========================================================== */
 
 .page__footer {
-	color: #a5aeae;
+	color: $grey--2;
 	background: $dark--5;
 
 	.nav__item {
 		display: inline-block;
 	}
 
-	.nav__link {
-		color: #a5aeae;
-	}
+	a {
+		color: $grey--2;
 
-	.nav__link:hover {
-		color: $blue--1;
+		&:hover,
+		&:focus {
+			color: $blue--1;
+		}
 	}
 }
 
@@ -80,6 +81,7 @@
 		margin-top: 2rem;
 		margin-bottom: 5rem;
 		vertical-align: middle;
+		position: relative;
 	}
 
 	.footer__column--1 {
