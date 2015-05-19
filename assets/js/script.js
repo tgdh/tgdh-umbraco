@@ -319,41 +319,34 @@
 
 	}
 
-	var homeCarousel  = function(){
-		var container = $('.home-tile-js');
+	var tileCarousel = function() {
+		var carousel = $('.js-carousel-tile');
 
-		container.owlCarousel({
-		    // stagePadding: 40,
-		    // autoWidth: true,
-		    loop: true,
-		    // margin: 30,
-		    // nav: false,
-		    // dots: false,
+		carousel.owlCarousel({
+		    loop:true,
 		    responsive:{
-	        0:{
-	        	stagePadding: 30,
-	        	items: 1,
-	            nav:false,
-	            dots: false,
-	            autoWidth: false,
-	            margin: 10
-	        },
-	        500:{
-	        	stagePadding: 0,
-	        	// items: 2,
-	        	navContainer: ".home-tile-js",
-	        	navText: ['<button class="page page--prev"> <i class="ico-arrow-left"></i> </button>','<button class="page page--next"> <i class="ico-arrow-right"></i> </button>'],
-	            nav: true,
-	            margin: 0,
-	            dots: false,
-	            autoWidth: true,
-	            // margin: 10
-	        }
-	    }
-
+		        0:{
+		        	stagePadding: 30,
+		        	items: 1,
+		            nav:false,
+		            dots: false,
+		            autoWidth: false,
+		            margin: 10
+		        },
+		        500:{
+		        	stagePadding: 0,
+		        	navContainer: ".js-carousel-tile",
+		        	navText: ['<button class="page page--prev"> <i class="ico-arrow-left"></i> </button>','<button class="page page--next"> <i class="ico-arrow-right"></i> </button>'],
+		            nav: true,
+		            margin: 0,
+		            dots: false,
+		            autoWidth: true,
+		        }
+		    }
 		});
-	}
 
+	}
+	
 /* ===========================================================
 
 	# INIT
@@ -365,6 +358,7 @@
 	    caseStudy();
 		$html.removeClass('preload');
 		coverCarousel();
+		tileCarousel();
 		reviewCarousel();
 		sizeMap();
 		scrollTo( $('a[href^="#"]') );
@@ -372,7 +366,6 @@
 //		initFormValidation();
 
 		$('#header').scrollToFixed();
-		homeCarousel();
 
 	});
 
