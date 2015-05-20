@@ -5,7 +5,7 @@
 =========================================================== */
 
 .button {
-	border-radius: .8rem;
+	border-radius: .6rem;
 	display: inline-block;
 	line-height: 1;
 	padding: 1rem 1.5rem;
@@ -39,6 +39,14 @@
 		color: #fff;
 		border: .2rem solid transparent;
 	}
+}
+
+@include respond-min( $mq-small ) {
+
+	.button--submit {
+		float: right;
+	}
+
 }
 
 @include respond-max( $mq-small ) {

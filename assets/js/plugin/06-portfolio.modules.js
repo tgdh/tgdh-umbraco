@@ -119,6 +119,31 @@
 
         },
 
+        ajaxSubForm: function() {
+
+            $('#module-tile').on('submit', '#subForm', function(e) {
+                e.preventDefault();
+
+                var subForm = $(this);
+
+                console.log( subForm );
+
+                $.getJSON(
+                this.action + "?callback=?",
+                $(this).serialize(),
+                function (data) {
+                    if (data.Status === 400) {
+                        //alert("Error: " + data.Message);
+                        $(subForm).prepend('<p class="alert alert--error">' + data.Message + '</p>');
+                    } else { // 200
+                        //alert("Success: " + data.Message);
+                        $(subForm).replaceWith('<p class="alert alert--success">' + data.Message + '</p>');
+                    }
+                });
+
+            });
+        },
+
         checkQueryString: function() {
             var self = this;
             var vars = [],
@@ -577,6 +602,7 @@
             self.tileSlide();
             self.magnificPopup();
             self.getStats();
+            self.ajaxSubForm();
         },
         updateData: function(result) {
             var self = this;
@@ -607,6 +633,7 @@
             self.tileSlide();
             self.getStats();
             self.magnificPopup();
+            self.ajaxSubForm();
         },
 
         addTiles: function(data) {
