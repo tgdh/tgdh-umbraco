@@ -126,15 +126,15 @@
 
                 var subForm = $(this);
 
-                console.log( subForm );
-
                 $.getJSON(
                 this.action + "?callback=?",
                 $(this).serialize(),
                 function (data) {
                     if (data.Status === 400) {
                         //alert("Error: " + data.Message);
-                        $(subForm).prepend('<p class="alert alert--error">' + data.Message + '</p>');
+                        if( $(subForm).find('.alert').length < 1 ) {
+                            $(subForm).prepend('<p class="alert alert--error">' + data.Message + '</p>');
+                         }
                     } else { // 200
                         //alert("Success: " + data.Message);
                         $(subForm).replaceWith('<p class="alert alert--success">' + data.Message + '</p>');
