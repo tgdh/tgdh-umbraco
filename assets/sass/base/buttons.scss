@@ -41,6 +41,16 @@
 	}
 }
 
+.button--disabled {
+	cursor: not-allowed !important;
+	background-color: $grey--1;
+
+	&:hover,
+	&:focus {
+		background-color: $grey--1;		
+	}
+}
+
 @include respond-min( $mq-small ) {
 
 	.button--submit {

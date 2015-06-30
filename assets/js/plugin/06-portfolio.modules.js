@@ -121,7 +121,7 @@
 
         ajaxSubForm: function() {
 
-            $('#module-tile').on('submit', '#subForm', function(e) {
+            $('.site').on('submit', '#subForm', function(e) {
                 e.preventDefault();
 
                 var subForm = $(this);
@@ -563,6 +563,8 @@
         renderData: function(result) {
             // console.log("called renderData");
             var self = this;
+            var maxHeight = 620;
+
             if (self.$elem.children().eq(temp.insertAfter - 1).length > 0) {
                 self.$elem.children().eq(temp.insertAfter - 1).after(temp.module);
 
@@ -573,12 +575,12 @@
             var tile = $(temp.moduleId);
             tile.html(result);
             tile.children().wrapAll("<div class='module__wrap clearfix'></div>")
-            var maxHeight = 620;
+            
+            maxHeight = $('.module__wrap').height();
 
             // console.log( height );
             // tile.css('max-height', height)
             setTimeout(function() {
-
                 tile.css({
                     'max-height': maxHeight + "px"
                 }).addClass(temp.moduleOpen); // .slideDown("slow");
@@ -587,6 +589,7 @@
 
 
             $("#module-tile img").on('load', function() {
+
                 var height = $('.module__wrap').outerHeight(true);
                 if (height > maxHeight) {
                     tile.css({
@@ -845,6 +848,24 @@
                 fixedContentPos: false
             });
             // console.log('magnific');
+
+            $('.js-modal-form').magnificPopup({
+                type: 'inline',
+                preloader: false,
+                focus: '#fieldName',
+                mainClass: 'mfp-modal',
+                // When elemened is focused, some mobile browsers in some cases zoom in
+                // It looks not nice, so we disable it:
+                callbacks: {
+                    beforeOpen: function() {
+                        if($(window).width() < 700) {
+                            this.st.focus = false;
+                        } else {
+                            this.st.focus = 'input';
+                        }
+                    }
+                }
+        });
         }
 
 

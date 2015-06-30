@@ -9,3 +9,58 @@
 	font-size: 75%;
 	font-weight: 700;
 }
+
+.contourField + .contourField {
+	margin-top: $line-height;
+}
+
+.fieldLabel {
+	font-weight: 700;
+	color: $grey--3;
+}
+
+p + .contour {
+	margin-top: 6rem;
+}
+
+
+.contourFieldSet + .contourFieldSet {
+	margin-top: 8rem;
+}
+
+@include respond-min( $mq-medium ) {
+
+	.contourFieldSet + .contourFieldSet {
+		margin-top: 12rem;
+	}
+
+}
+
+/* numbering 
+
+.contourPage {
+	counter-reset: section-counter;
+}
+.contourFieldSet h2:before {
+	content: counter(section-counter);
+	counter-increment: section-counter;
+	
+	font-size: 2.4rem;
+	color: #fff;
+	background-color: $blue--1;
+	display: inline-block;
+	vertical-align: top;
+	padding: .5rem 1.2rem;
+	border-radius: $border-radius;
+	margin-right: 1rem;
+}
+
+.page--briefing-form {
+
+	.contourField.textarea {
+
+	}
+
+}
+
+*/

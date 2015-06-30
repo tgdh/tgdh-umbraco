@@ -18,11 +18,13 @@ li {
 	}
 }
 
-.page__content ul {
+.page__content ul,
+.large-tile ul {
 	margin-left: $line-height * 2;
 }
 
-.page__content li {
+.page__content li,
+.large-tile li {
 
 	position: relative;
 

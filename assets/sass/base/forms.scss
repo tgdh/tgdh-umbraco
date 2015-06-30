@@ -22,9 +22,11 @@ textarea {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+textarea {
 	border: .2rem solid $border-colour;
 	border-radius: .3rem;
+	background-color: #fff;
 }
 
 
@@ -102,10 +104,10 @@ select {
 =========================================================== */
 
 textarea {
-	resize: none;
+	overflow: auto; // Hide scrollbar IE
+	min-height: 12rem;
+	display: block;
 }
-
-
 
 /* ===========================================================
 

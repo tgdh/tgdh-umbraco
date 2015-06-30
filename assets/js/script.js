@@ -364,7 +364,39 @@
 		});
 
 	}
-	
+
+/*
+	var briefingForm = function() {
+
+		var wrap = $('#contour_form_Briefingform'),
+			form = wrap.find('form');
+
+		// cache
+		var info = {
+			count: 0,
+			current: 0
+		}
+
+		// set page count
+		info.count = form.find('.contourFieldSet').length;
+
+		//init
+		info.current = 1;
+
+		//append pageNum
+		wrap.append('<div>' + info.current + '/' + info.count + '</div>');
+
+	}
+*/	
+
+	var briefingForm = function() {
+
+		$("#contour_form_Briefingform").formToWizard({
+			stepsclass: '.contourFieldSet'
+		});
+
+	}
+
 /* ===========================================================
 
 	# INIT
@@ -382,6 +414,8 @@
 		scrollTo( $('a[href^="#"]') );
 		$('#main').fitVids();
 //		initFormValidation();
+
+		briefingForm();
 
 		$('#header').scrollToFixed();
 
