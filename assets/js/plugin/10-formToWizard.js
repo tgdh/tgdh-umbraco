@@ -34,6 +34,7 @@
 
                 createPagination(i);
                 createNextButton(i);
+                focusInput(i);
 //                selectStep(i);
             }
             else if (i == count - 1) {
@@ -56,15 +57,17 @@
 
             $("#" + stepName + "Prev").on("click", function(e) {
 
-                if( isValid( stepName ) ) {
-                    $("#" + stepName).hide();
-                    $("#step" + (i - 1)).show();
-                    $(submmitButtonName).hide();
-    //                selectStep(i - 1);
-                    $('html, body').animate({scrollTop :  ( $('#contour_form_Briefingform').offset().top - 120) },200);
-                    return false;
-                }
+                $("#" + stepName).hide();
+                $("#step" + (i - 1)).show();
 
+                // focus first input of new fieldset
+                focusInput( i - 1 );
+
+                $(submmitButtonName).hide();
+//                selectStep(i - 1);
+                $('html, body').animate({scrollTop :  ( $('#contour_form_Briefingform').offset().top - 120) },200);
+                return false;
+            
             });
         }
 
@@ -77,6 +80,10 @@
                 if( isValid( stepName ) ) {
                     $("#" + stepName).hide();
                     $("#step" + (i + 1)).show();
+
+                    // focus first input of new fieldset
+                    focusInput( i + 1 );
+
                     if (i + 2 == count)
                         $(submmitButtonName).show();
     //                selectStep(i + 1);
@@ -94,6 +101,10 @@
 
         function isValid( stepName ) {
             return $('#' + stepName).find('input,textarea').valid();
+        }
+
+        function focusInput(i) {
+            $( "#step" + ( i ) ).find('input[type=text],textarea,select').filter(':visible:first').focus();
         }
 
 /*
