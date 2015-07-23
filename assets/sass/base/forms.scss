@@ -117,9 +117,10 @@ textarea {
 
 input[type="radio"],
 input[type="checkbox"] {
-	width: 2rem;
-	height: 2rem;
+	width: 1.6rem;
+	height: 1.6rem;
 
+	text-align: center;
 	background: $border-colour;
 	color: #fff;
 	cursor: pointer;
@@ -139,11 +140,8 @@ input[type="checkbox"] {
 
 	&:checked {
 		background: $pri;
-
-		&:before {
-			content: '\2713';
-		}
 	}
+
 }
 
 input[type="radio"] {
@@ -152,6 +150,26 @@ input[type="radio"] {
 
 input[type="checkbox"] {
 	
+}
+
+.radiobuttonlist {
+
+	label {
+		padding-top: 0;
+		display: inline-block;
+	}
+
+}
+
+/* ===========================================================
+
+	#BUTTON
+
+=========================================================== */
+
+input[type="submit"].button {
+	cursor: pointer;
+	border: transparent;
 }
 
 

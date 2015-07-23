@@ -36,6 +36,23 @@ p + .contour {
 
 }
 
+.contour + h2,
+.contour + h3, {
+	margin-top: $line-height * 2;
+}
+
+.contourNavigation {
+	margin-top: $line-height;
+}
+
+.contour.callbackform {
+
+	input[type=submit].button {
+		padding: 1.5rem 3rem;
+	}
+
+}
+
 /* numbering 
 
 .contourPage {
