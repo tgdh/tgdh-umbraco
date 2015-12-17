@@ -29,7 +29,9 @@ p + p,
 p + ul,
 p + ol,
 ul + p,
-ol + p {
+ol + p,
+ol + ul
+ul + ol {
 	margin-top: 1.5 + em; //= Preserves verticle rythm being equal to line-height
 }
 

@@ -28,10 +28,54 @@ p + .contour {
 	margin-top: 8rem;
 }
 
+.page--ama {
+
+	.contourFieldSet + .contourFieldSet {
+		margin-top: 0 !important;
+	}
+
+	.contourField.text {
+		margin-top: $line-height * 2;
+	}
+
+	.text h2 {
+		@include heading-font-size($delta--small);
+	}
+
+}
+
+@include respond-max( $mq-small ) {
+
+	.col-md-6 + .col-md-6 {
+		margin-top: $line-height;
+	}
+
+}
+
+@include respond-min( $mq-small ) {
+
+	.row-fluid {
+		@include clearfix();
+	}
+
+	.col-md-6 {
+		width: 50%;
+		float: left;
+	}
+
+}
+
 @include respond-min( $mq-medium ) {
 
 	.contourFieldSet + .contourFieldSet {
 		margin-top: 12rem;
+	}
+
+	.page--ama {
+		.text h2 {
+			font-size: 2.592rem;
+			padding-bottom: 1.296rem;
+		}
 	}
 
 }

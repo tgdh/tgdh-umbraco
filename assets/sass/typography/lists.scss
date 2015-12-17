@@ -18,13 +18,15 @@ li {
 	}
 }
 
+/* Unordered list */
+
 .page__content ul,
 .large-tile ul {
 	margin-left: $line-height * 2;
 }
 
-.page__content li,
-.large-tile li {
+.page__content ul li,
+.large-tile ul li {
 
 	position: relative;
 
@@ -42,3 +44,44 @@ li {
 	}
 
 }
+
+/* Ordered list */
+
+.page__content,
+.large-tile {
+
+	ol {
+//		counter-reset: list-counter;
+		margin-left: $line-height * 2;
+	}
+
+	@for $i from 1 through 100 {
+		ol[start="#{$i}"] {
+			counter-reset: list-counter $i ;
+		}
+	}
+
+	}
+
+.page__content ol li,
+.large-tile ol li {
+	position: relative;
+
+	&:before {
+		content: counter(list-counter);
+		counter-increment: list-counter;
+		font-size: 1.8rem;
+		font-weight: 900;
+		color: $sec;
+		display: block;
+		left: -2.2rem;
+		position: absolute;
+		text-align: center;
+	}
+
+
+}
+
+
+
+
