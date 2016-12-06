@@ -1,0 +1,158 @@
+/* ===========================================================
+	# Grid settings
+=========================================================== */
+
+$jeet-gutter:				5      !default;
+$jeet-parent-first:     	false  !default;
+$jeet-layout-direction: 	"LTR"  !default;
+$jeet-max-width:			1410px !default;
+
+@import '../tools/jeet/_functions',
+		'../tools/jeet/_grid';
+
+/* TOOLS
+=========================================================== */
+
+@import "../tools/variables.scss";
+@import "../tools/utils.scss";
+@import "../tools/responsive.scss";
+@import "../tools/helpers.scss";
+
+/* ===========================================================
+	# Santa Selfie
+=========================================================== */
+
+body {
+    background-color: white;
+}
+
+.ss-header {
+    background-color: #caeaf5;
+    position: relative;
+}
+
+.ss-header__headline {
+    color: #fa6176;
+    font-weight: 800;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+.ss-header:after {
+    content: "";
+    width: 100%;
+    background: url('/assets/img/campaign/waves.svg') repeat-x;
+    padding-top: (136 / 1400) * 100%;
+    background-size: 100%;
+    display: block;
+}
+
+.o-grid--four {
+
+}
+
+.ss-item__link {
+    position: relative;
+    display: block;
+
+    &:before {
+        content: "";
+        padding-top: 100%;
+        display: block;
+        background-color: #caeaf5;
+    }
+}
+
+.ss-item__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ss-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+@include respond-max( $mq-medium ) {
+
+    .o-grid--four {
+
+        .o-grid__item {
+            @include column( 1/2, $cycle: 2, $gutter: 4 );
+            margin-bottom: 3rem;
+        }
+
+    }
+
+}
+
+
+@include respond-min-max( $mq-medium, $mq-large ) {
+
+    .o-grid--four {
+
+        .o-grid__item {
+            @include column( 1/3, $cycle: 3, $gutter: 4 );
+            margin-bottom: 3rem;
+        }
+
+    }
+
+}
+
+@include respond-min( $mq-medium ) {
+
+    .ss-header__headline {
+        padding: 6rem 2rem 2rem;
+    }
+
+    .ss-cloud {
+        position: absolute;
+
+        &:after {
+            content: "";
+            padding-top: (42 / 106) * 100%;
+            display: block;
+            background: url('/assets/img/campaign/cloud.svg') no-repeat;
+            background-size: contain;
+        }
+    }
+
+    .ss-cloud--1 {
+        width: 106px;
+        top: 80px;
+        left: 10%;
+    }
+
+    .ss-cloud--2 {
+        width: 70px;
+        top: 25px;
+        left: 45%;
+    }
+
+    .ss-cloud--3 {
+        width: 142px;
+        top: 70px;
+        right: 10%;
+    }
+
+}
+
+
+@include respond-min( $mq-large ) {
+
+    .o-grid--four {
+
+        .o-grid__item {
+            @include column( 1/4, $cycle: 4, $gutter: 4 );
+            margin-bottom: 3rem;
+        }
+
+    }
+
+
+}

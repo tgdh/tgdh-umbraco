@@ -8,12 +8,12 @@ module.exports = function (grunt) {
          */
         watch: {
             css: {
-                files: ['assets/sass/*/*.scss'],
-                tasks: ['sass', 'autoprefixer', 'css_mqpacker', 'stripmq', 'cssmin', 'ftpush:build']
+                files: ['assets/sass/*/*.scss','assets/sass/campaigns/*.scss'],
+                tasks: ['sass', 'autoprefixer', 'css_mqpacker', 'stripmq', 'cssmin']
             },
             scripts: {
                 files: ['assets/js/*/*.js','assets/js/*.js'],
-                tasks: ['concat', 'uglify', 'ftpush:build' ]
+                tasks: ['concat', 'uglify' ]
             }
         },
 
@@ -29,7 +29,8 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'assets/css/style.css': 'assets/sass/style.scss',
-                    'assets/css/style-ie.css': 'assets/sass/style-ie.scss'
+                    'assets/css/style-ie.css': 'assets/sass/style-ie.scss',
+                    'assets/css/campaigns/santa-selfie.css':'assets/sass/campaigns/santa-selfie.scss'
                 }
             }
         },
@@ -103,7 +104,7 @@ module.exports = function (grunt) {
             }
         },
 
-        
+
         /*
          * MISC
          */
@@ -156,11 +157,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-
     grunt.loadNpmTasks('grunt-ftpush');
 
     grunt.loadNpmTasks('grunt-contrib-watch');
-
 
     grunt.registerTask('dev', [
         'css',
@@ -175,11 +174,11 @@ module.exports = function (grunt) {
 
 
     grunt.registerTask('css', [
-        'sass', 
-        'autoprefixer', 
-        'css_mqpacker', 
-        'stripmq', 
-        'pixrem', 
+        'sass',
+        'autoprefixer',
+        'css_mqpacker',
+        'stripmq',
+        'pixrem',
         'cssmin'
     ]);
 
