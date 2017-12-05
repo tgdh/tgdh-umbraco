@@ -1,0 +1,92 @@
+/* ===========================================================
+
+	#BRIEFING FORM
+
+=========================================================== */
+
+.page--briefing-form {
+
+	.button {
+		border: none;
+		cursor: pointer;
+	}
+
+	.row-fluid {
+		@include clearfix();
+	}
+
+	.contourField {
+		position: relative;
+	}
+
+	#step7 .step-controls {
+		width: 66.6%;
+	}
+
+	.contourNavigation {
+		width: 33.3%;
+		float: right;
+		text-align: left;
+		margin-top: -5.7rem;
+	}
+
+}
+
+.step-controls {
+	width: 100%;
+	display: table;
+	position: relative;
+	text-align: center;
+	margin-top: 3rem;
+	
+	.step-controls__col {
+		width: 33.3%;
+		display: table-cell;
+	}
+
+	.pager {
+		color: $grey--1;
+	}
+
+	.step-controls__col--first {
+		text-align: right;
+	}
+
+	.step-controls__col--last {
+		text-align: left;
+	}
+
+}
+
+@include respond-min( $mq-medium ) {
+
+	.page--briefing-form {
+
+		.contourField {
+
+			&.textfield {
+				width: 48%;
+				float: left;
+			}
+
+			&.text {
+				width: inherit;
+				float: inherit;
+			}
+
+			&.emailaddress,
+			&.companyname {
+				float: right;
+			}
+
+		}
+
+		.button {
+			padding: 1.5rem 4rem;
+			display: inline-block;
+			margin-left: auto;
+		}
+
+	}
+
+}

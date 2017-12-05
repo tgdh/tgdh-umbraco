@@ -29,7 +29,9 @@ p + p,
 p + ul,
 p + ol,
 ul + p,
-ol + p {
+ol + p,
+ol + ul
+ul + ol {
 	margin-top: 1.5 + em; //= Preserves verticle rythm being equal to line-height
 }
 
@@ -58,14 +60,20 @@ em {
 	font-style: italic;
 }
 
+pre {
+	overflow: auto;
+	background: $light--2;
+	padding: 1.5rem;
+	border-radius: .3rem;
+	-webkit-overflow-scrolling: touch;
+}
+
 ::selection {
-	color: #4A4A4A;
-	background: lighten($highlight-colour, 30);
+	background: $highlight-colour;
 }
 
 ::-moz-selection {
-	color: #4A4A4A;
-	background: lighten($highlight-colour, 30);
+	background: $highlight-colour;
 }
 
 @include respond-min( $mq-medium ) {

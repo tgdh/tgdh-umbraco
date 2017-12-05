@@ -10,6 +10,22 @@
 	padding-bottom: 4rem;
 }
 
+.listing__cover {
+	border-radius: .3rem;
+}
+
+@include respond-max( $mq-small ) {
+
+	.listing--image {
+
+		.listing__cover {
+			margin-bottom: $line-height;
+		}
+
+	}
+
+}
+
 @include respond-min( $mq-small ) {
 
 	.listing--image {

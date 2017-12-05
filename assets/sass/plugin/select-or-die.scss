@@ -4,6 +4,19 @@
 
 =========================================================== */
 
+
+.sod_select:after {
+    position: absolute;
+    right: 0;
+    color: #fff;
+    font-size: 1.6rem;
+    z-index: -1;
+    top: 50%;
+    margin-top: -.8rem;
+    margin-right: 1.8rem;
+}
+
+
 /* ===========================================================
  *
  *  Name:          selectordie_dev.css
@@ -19,9 +32,6 @@
  *
  *  Oddny | Cogs 'n Kegs
  * =========================================================== */
-
-/* Remove, change to fit your needs */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,700);
 
 .sod_select,
 .sod_select *
@@ -55,7 +65,7 @@
         outline: 0;
         outline-offset: -2px; /* Opera */
         cursor: default;
-        border-radius: 1rem;
+        border-radius: 1rem 2rem 2rem 1rem;
         margin-right: 2rem;
 /*        overflow: hidden;*/
 /*        z-index: 3;*/
@@ -64,10 +74,9 @@
     }
 
     /* Up/Down arrows */
-    .sod_select:before,
-    .sod_select:after
+    .sod_select:before
         {
-/*            content: "\25B2";*/
+            content: "";
             position: absolute;
             right: 10px;
             top: 12px;
@@ -82,29 +91,26 @@
             text-align: center;
             /* padding-top: 30%; */
             line-height: 5rem;
+            vertical-align: middle;
             color: white;
             border-top-right-radius: 1rem;
             border-bottom-right-radius: 1rem;
             transition: background 0.3s ease;
         }
 
-    .sector-select:before,
-    .sector-select:after
+    .sector-select:before
         {
             background: $green--1;
-            z-index: 1;
+            z-index: -1;
         }
-    .cat-select:before,
-    .cat-select:after
-        {
+    .cat-select:before {
             background: $pink--1;
-            z-index: 2;
+            z-index: -1;
         }
-    .client-select:before,
-    .client-select:after
+    .client-select:before
         {
             background: $yellow--1;
-            z-index: 3;
+            z-index: -1;
         }
 
     .sod_select:hover {
@@ -112,40 +118,30 @@
         &:before {
             background: $dark--5;
         }
-        &:after {
-            background: $dark--5;
-        }
     }
-    .sector-select,
-    .sector-select
-        {
+    .sector-select {
             z-index: 3;
             .sod_list_wrapper {
                 z-index: 3;
             }
         }
-    .cat-select,
-    .cat-select
-        {
-            z-index: 2;
+    .cat-select {
+            z-index: 3;
             .sod_list_wrapper {
                 z-index: 2;
             }
         }
-    .client-select,
-    .client-select
-        {
-            z-index: 1;
+    .client-select {
+            z-index: 3;
             .sod_list_wrapper {
                 z-index: 1;
             }
         }
-    .sod_select.open:before,
-    .sod_select.open:after {
+    .sod_select.open:before {
             border-bottom-right-radius: 0rem;
     }
 
-    .sod_select.open:after, .sod_select.open:before {
+    .sod_select.open:before {
         background: $dark--5;
     }
         /* Down arrow */
@@ -209,7 +205,7 @@
             border-bottom-right-radius: 1rem;
             padding-top: 1rem;
             overflow: hidden;
-            z-index: 1;
+            z-index: -2;
         }
 
         /* Shows the option list (don't edit) */
@@ -342,7 +338,8 @@
 
     .sod_select,
     .sod_list_wrapper {
-        width: 80%;
+        width: 30%;
+        margin-right: 2%;
     }
 
 }

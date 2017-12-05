@@ -1,0 +1,25 @@
+/* ===========================================================
+
+	#MODAL FORM
+
+=========================================================== */
+
+.mfp-bg.mfp-modal {
+	background-color: $dark--1;
+	opacity: .7;
+}
+
+.modal-form {
+	position: relative;
+	max-width: 64rem;
+	background: $light--1;
+	border-radius: .5rem;
+	padding-left: 3rem;
+	padding-right: 3rem;
+	padding-top: 2rem;
+	padding-bottom: 4rem;
+
+	p + form {
+		margin-top: $line-height;
+	}
+}

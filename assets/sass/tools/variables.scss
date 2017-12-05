@@ -16,7 +16,7 @@ $dark--1: 		#282828;  /*F36F21 */
 $dark--2:		#4a4a4a;
 $dark--3:		#738d8b; /* #F6F6F6 */
 $dark--4:		#7e9695;
-$dark--5:		#073734;
+$dark--5:		#475150;
 
 $blue--1: 		#00b7ce;
 $pink--1: 		#ed1165;
@@ -36,7 +36,7 @@ $sec: 			$pink--1;
 
 $font-size--small:		1.6rem;
 $font-size--large:		1.8rem;
-$line-height:			1.6em;
+$line-height:			1.4em;
 $type-scale--small:		1.125;
 $type-scale--large:		1.200;
 
@@ -48,8 +48,8 @@ $type-scale--large:		1.200;
 
 $text-colour:			$dark--2;
 $background-colour:		$light--1;
-$border-colour:			$sec;
-$highlight-colour:		$sec;
+$border-colour:			$light--3;
+$highlight-colour:		lighten( $pri, 50 );
 
 $padding--small:		4rem;
 $padding--medium:		6rem;

@@ -1,0 +1,116 @@
+/* ===========================================================
+
+	#TILE OVERLAY
+
+=========================================================== */
+
+.tile-overlay {
+	position: relative;
+}
+
+.tile__content {
+	color: #fff;
+	position: absolute;
+	display: block;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+.tile__title {
+	color: #fff;
+}
+
+@include respond-max( $mq-large ) {
+
+	.no-touch {
+
+		.tile__title {
+			font-size: 2rem;
+		}
+
+	}
+
+}
+
+.no-touch {
+
+	.tile-overlay {
+
+		&:before {
+			content: "";
+			background: transparent;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			transition: background $speed ease;
+		}
+
+		&:hover:before {
+			background: rgba(0,0,0,0.5);
+		}
+
+	}
+
+	.tile__content {
+		top: 50%;
+		transform: translateY( -50% );
+		text-align: center;
+		padding: 10%;
+	}
+
+	.tile__title {
+		visibility: hidden;
+		opacity: 0;
+		transform: scale(.7);
+		transition: opacity .5s ease,
+					visibility .5s ease,
+					transform .4s ease;
+	}
+
+
+	.tile-overlay:hover {
+
+		.tile__title {
+			visibility: visible;
+			opacity: 1;
+			transform: translate(0) scale(1);
+		}
+
+	}
+
+}
+
+.no-rgba.no-touch {
+
+	.tile-overlay:hover:before {
+		background: url(/assets/img/transparent-black.png) repeat;
+	}
+
+}
+
+.touch {
+
+	.tile-overlay {
+
+		.tile__title {
+			text-align: left;
+			padding-bottom: 0;
+		}
+
+		.tile__content {
+			bottom: 0;
+			padding: 1rem;
+			background: rgba(0,0,0,.6);
+
+			&:before {
+				visibility: visible;
+				opacity: .5;
+			}
+		}
+	}
+
+}

@@ -14,7 +14,8 @@ h4,
 .alpha,
 .beta,
 .gamma,
-.delta {
+.delta,
+.epsilon {
 	font-weight: 800;
 	line-height: 1.1;
 	color: $grey--3;
@@ -22,7 +23,7 @@ h4,
 
 h5,
 h6,
-.epsilon,
+/*.epsilon,*/
 .zeta {
 	font-weight: 500;
 }
@@ -98,7 +99,8 @@ h6,
 	font-weight: 200 !important;
 }
 
-.intro + p {
+.intro + p,
+.intro + h2 {
 	padding-top: 1.5em;
 }
 

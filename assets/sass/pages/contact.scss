@@ -6,11 +6,16 @@
 
 .col--map {
 	min-height: 30rem;
+
+	img {
+		max-width: inherit;
+	}
 }
 
 .col--copy {
 	padding: 4rem 2rem;
 }
+
 .contact-info {
 
 	.ico-phone {

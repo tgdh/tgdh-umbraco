@@ -1,0 +1,350 @@
+/* ===========================================================
+	# Grid settings
+=========================================================== */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ *  Alias for edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Apply a clearfix to an element.
+ */
+/* TOOLS
+=========================================================== */
+/* ===========================================================
+
+	#COLOURS
+
+=========================================================== */
+/*738D8B*/
+/*F36F21 */
+/* #F6F6F6 */
+/* ===========================================================
+
+	#TYPOGRAPHY
+
+=========================================================== */
+/* ===========================================================
+
+	#BASE VALUES
+
+=========================================================== */
+/* ===========================================================
+
+	#MEDIA QUERIES
+
+=========================================================== */
+/* ===========================================================
+
+	#UTILS
+
+=========================================================== */
+/* ===========================================================
+
+	#MEDIA QUERIES
+
+=========================================================== */
+/* ===========================================================
+
+	#HELPERS
+
+=========================================================== */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.text--light {
+  font-weight: 300 !important;
+}
+
+.block-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ===========================================================
+	# Santa Selfie
+=========================================================== */
+body {
+  background-color: white;
+}
+
+.ss-header {
+  background-color: #caeaf5;
+  position: relative;
+}
+
+.ss-header__headline {
+  color: #fa6176;
+  font-weight: 800;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.ss-header:after {
+  content: "";
+  width: 100%;
+  background: url("/assets/img/campaign/waves.svg") repeat-x;
+  padding-top: 9.71429%;
+  background-size: 100%;
+  display: block;
+}
+
+.ss-item__link {
+  position: relative;
+  display: block;
+}
+.ss-item__link:before {
+  content: "";
+  padding-top: 100%;
+  display: block;
+  background-color: #caeaf5;
+}
+
+.ss-item__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ss-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media only screen and (max-width: 49.99em) {
+  .o-grid--four .o-grid__item {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 48%;
+    margin-left: 0%;
+    margin-right: 4%;
+    margin-bottom: 3rem;
+  }
+  .o-grid--four .o-grid__item:before, .o-grid--four .o-grid__item:after {
+    content: '';
+    display: table;
+  }
+  .o-grid--four .o-grid__item:after {
+    clear: both;
+  }
+  .o-grid--four .o-grid__item:nth-child(2n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .o-grid--four .o-grid__item:nth-child(2n + 1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 50em) and (max-width: 62.49em) {
+  .o-grid--four .o-grid__item {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 30.66667%;
+    margin-left: 0%;
+    margin-right: 4%;
+    margin-bottom: 3rem;
+  }
+  .o-grid--four .o-grid__item:before, .o-grid--four .o-grid__item:after {
+    content: '';
+    display: table;
+  }
+  .o-grid--four .o-grid__item:after {
+    clear: both;
+  }
+  .o-grid--four .o-grid__item:nth-child(3n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .o-grid--four .o-grid__item:nth-child(3n + 1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 50em) {
+  .ss-header__headline {
+    padding: 6rem 2rem 2rem;
+  }
+
+  .ss-cloud {
+    position: absolute;
+  }
+  .ss-cloud:after {
+    content: "";
+    padding-top: 39.62264%;
+    display: block;
+    background: url("/assets/img/campaign/cloud.svg") no-repeat;
+    background-size: contain;
+  }
+
+  .ss-cloud--1 {
+    width: 106px;
+    top: 80px;
+    left: 10%;
+  }
+
+  .ss-cloud--2 {
+    width: 70px;
+    top: 25px;
+    left: 45%;
+  }
+
+  .ss-cloud--3 {
+    width: 142px;
+    top: 70px;
+    right: 10%;
+  }
+}
+@media only screen and (min-width: 62.5em) {
+  .o-grid--four .o-grid__item {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 22%;
+    margin-left: 0%;
+    margin-right: 4%;
+    margin-bottom: 3rem;
+  }
+  .o-grid--four .o-grid__item:before, .o-grid--four .o-grid__item:after {
+    content: '';
+    display: table;
+  }
+  .o-grid--four .o-grid__item:after {
+    clear: both;
+  }
+  .o-grid--four .o-grid__item:nth-child(4n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .o-grid--four .o-grid__item:nth-child(4n + 1) {
+    clear: both;
+  }
+}
+
+/*# sourceMappingURL=santa-selfie.css.map */

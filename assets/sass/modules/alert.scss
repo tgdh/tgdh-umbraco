@@ -1,0 +1,23 @@
+/* ===========================================================
+
+	#ALERT
+
+=========================================================== */
+
+.alert {
+	padding: 1rem;
+	margin-bottom: $line-height;
+	border-radius: .3rem;
+}
+
+.alert--success {
+	background-color: lighten($green--1, 40);
+}
+
+.alert--error {
+	background-color: lighten($pink--1, 40);
+}
+
+.alert--info {
+	background-color: lighten($yellow--1, 25);
+}

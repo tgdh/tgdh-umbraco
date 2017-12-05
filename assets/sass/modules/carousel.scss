@@ -42,6 +42,7 @@
 		}
 
 		i {
+			font-size: 2.4rem;
 			display: block;
 			opacity: .5;
 			transition: transform $speed ease, opacity $speed ease;
@@ -65,6 +66,7 @@
 	}
 
 	.button {
+		width: inherit;
 		padding: 1.5rem 2rem;
 
 		&:hover {
@@ -73,5 +75,21 @@
 		}
 	}
 
+	.button--primary {
+		padding: 1.4rem 3rem;
+	}
+
 }
 
+@include respond-min( $mq-medium ) {
+
+	.carousel--cover {
+
+		.page i {
+
+			font-size: 3.2rem;
+		}
+
+	}
+
+}

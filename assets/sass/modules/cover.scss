@@ -4,15 +4,14 @@
 
 =========================================================== */
 
-
-
 .carousel--cover,
 .cover {
 	position: relative;
 	height: 100%;
 }
 
-.overlay {
+.cover--dark:after {
+	content: "";
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -22,18 +21,38 @@
 	z-index: 1;
 }
 
+.no-rgba {
+
+	.cover--dark:after {
+		z-index: 1;
+		background: url(/assets/img/transparent-black-20.png) repeat;
+	}
+
+}
+
 .cover {
 	background: $dark--1 center center;
 	background-size: cover;
 }
 
+.cover__content {
+	position: relative;
+	z-index: 10;
+}
+
 .csstransforms {
 
 	.cover__content {
-		position: relative;
-		top: 40%;
+		top: 50%;
 		transform: translateY(-50%);
-		z-index: 2;
+	}
+
+}
+
+.no-csstransforms {
+
+	.cover__content {
+		top: 20%;
 	}
 
 }
@@ -54,7 +73,15 @@
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
-	text-shadow: 0 0 3px rgba(0,0,0,.05), 0 1px 5px rgba(0,0,0,.3);
+	padding-bottom: 1em;
+}
+
+.cover--guideposts {
+
+	.wrap {
+		max-width: 100rem;
+	}
+
 }
 
 /* cover post */
@@ -79,12 +106,20 @@
 		margin-top: 2rem;
 	}
 
+	.cover__title {
+		font-size: 4.4rem;
+	}
+
 }
 
 @include respond-min( $mq-large ) {
 
 	.cover--post {
 		margin-top: 6rem;
+	}
+
+	.cover__title {
+		font-size: 6rem;
 	}
 
 }

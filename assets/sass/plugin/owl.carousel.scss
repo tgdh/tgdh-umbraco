@@ -112,6 +112,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 .owl-carousel .owl-item img {
   display: block;

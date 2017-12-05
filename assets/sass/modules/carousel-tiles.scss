@@ -1,0 +1,143 @@
+/* ===========================================================
+
+	#CAROUSEL - TILES
+
+=========================================================== */
+
+.carousel--tiles {
+
+}
+
+.tile {
+	position: relative;
+	width: 100%;
+	min-height: 35rem;
+	float: left;
+	padding: 0;
+	overflow: hidden;
+
+	.ico-twitter {
+		vertical-align: middle;
+	}
+}
+
+@include respond-min( $mq-small ) {
+
+	.tile {
+		max-width: 35rem;
+		margin-left: 1.5rem;
+	}
+
+}
+
+.tile--blue,
+.tile--pink,
+.tile--yellow,
+.tile--green {
+	color: #fff;
+
+	a,
+	h2 {
+		color: #fff;
+	}
+
+	a {
+		font-weight: 700;
+
+		&:hover,
+		&:focus {
+			color: $dark--5;
+		}
+	}
+}
+
+
+.no-rgba {
+
+	.tile--blue,
+	.tile--pink,
+	.tile--yellow,
+	.tile--green {
+
+		.tile__copy {
+			background: url(/assets/img/transparent-black.png) repeat;
+		}
+
+	}
+
+}
+
+.tile--blue {
+	background-color: $blue--1;
+}
+
+.tile--pink {
+	background-color: $pink--1;
+}
+
+.tile--yellow {
+	background-color: $yellow--1;
+}
+
+.tile--green {
+	background-color: $green--1;
+}
+
+.tile--article {
+	background-position: top center;
+	background-size: cover;
+
+	&.tile--blue {
+		.tile__copy {
+			background-color: rgba(0, 183, 206, .5);
+		}
+	}
+
+	&.tile--pink {
+		.tile__copy {
+			background-color: rgba(229, 0, 91, .5);
+		}
+	}
+
+	&.tile--yellow {
+		.tile__copy {
+			background-color: rgba(250, 214, 32, .5);
+		}
+	}
+
+	&.tile--green {
+		.tile__copy {
+			background-color: rgba(66, 169, 79, .5);
+		}
+	}
+
+	&.tile--white {
+		.tile__copy {
+			color: $text-colour !important;
+			background-color: rgba(255, 255, 255, .5);
+		}
+	}
+
+	.tile__copy {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 1em;
+	}
+
+	h2 {
+		padding-bottom: .2rem;
+	}
+
+}
+
+.tile--tweet {
+	padding: $line-height;
+
+	font-size: 2rem;
+}
+
+.tile--image {
+	background-position: center;
+}

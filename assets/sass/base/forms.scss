@@ -5,11 +5,12 @@
 =========================================================== */
 
 input[type="text"],
+input[type="email"],
 select,
 textarea {
 	background: none;
-/*	border: $border-width solid $border-colour;
-	border-radius: $border-radius;*/
+/*	border: .2rem solid $border-colour;
+	border-radius: .2rem; */
 	margin: 0;
 	padding: 1rem;
 	transition: border $speed ease;
@@ -20,7 +21,28 @@ textarea {
 	}
 }
 
+input[type="text"],
+input[type="email"],
+textarea {
+	border: .2rem solid $border-colour;
+	border-radius: .3rem;
+	background-color: #fff;
+}
 
+
+.input + .input,
+.input + .button {
+	margin-top: $line-height;
+}
+
+.input {
+
+	input[type="text"],
+	input[type="email"] {
+		background-color: #fff;
+	}
+
+}
 
 /* ===========================================================
 
@@ -31,7 +53,7 @@ textarea {
 label {
 	display: block;
 	padding-top: $line-height;
-	padding-bottom: $line-height / 2;
+	padding-bottom: $line-height / 5;
 
 	&:first-child {
 		padding-top: 0;
@@ -82,10 +104,10 @@ select {
 =========================================================== */
 
 textarea {
-	resize: none;
+	overflow: auto; // Hide scrollbar IE
+	min-height: 12rem;
+	display: block;
 }
-
-
 
 /* ===========================================================
 
@@ -95,9 +117,10 @@ textarea {
 
 input[type="radio"],
 input[type="checkbox"] {
-	width: 2rem;
-	height: 2rem;
+	width: 1.6rem;
+	height: 1.6rem;
 
+	text-align: center;
 	background: $border-colour;
 	color: #fff;
 	cursor: pointer;
@@ -117,11 +140,8 @@ input[type="checkbox"] {
 
 	&:checked {
 		background: $pri;
-
-		&:before {
-			content: '\2713';
-		}
 	}
+
 }
 
 input[type="radio"] {
@@ -130,6 +150,27 @@ input[type="radio"] {
 
 input[type="checkbox"] {
 	
+}
+
+.radiobuttonlist,
+.checkboxlist {
+
+	label {
+		padding-top: 0;
+		display: inline-block;
+	}
+
+}
+
+/* ===========================================================
+
+	#BUTTON
+
+=========================================================== */
+
+input[type="submit"].button {
+	cursor: pointer;
+	border: transparent;
 }
 
 

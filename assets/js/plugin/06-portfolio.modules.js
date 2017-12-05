@@ -15,8 +15,8 @@
         closeClass: 'tile-close',
         moduleOpen: 'module--open',
         moduleClose: 'module--close',
-        loadMore: '<button id="load-more" class="">Load more</button>',
-        loadPrev: '<button id="load-prev" class="">Load previous</button>',
+        loadMore: '<button id="load-more" class="button button--load button--load-prev">Load more</button>',
+        loadPrev: '<button id="load-prev" class="button button--load button--load-next">Load previous</button>',
         wrapper: 0,
         tiles: 0,
         loading: false,
@@ -119,6 +119,31 @@
 
         },
 
+        ajaxSubForm: function() {
+
+            $('.site').on('submit', '#subForm', function(e) {
+                e.preventDefault();
+
+                var subForm = $(this);
+
+                $.getJSON(
+                this.action + "?callback=?",
+                $(this).serialize(),
+                function (data) {
+                    if (data.Status === 400) {
+                        //alert("Error: " + data.Message);
+                        if( $(subForm).find('.alert').length < 1 ) {
+                            $(subForm).prepend('<p class="alert alert--error">' + data.Message + '</p>');
+                         }
+                    } else { // 200
+                        //alert("Success: " + data.Message);
+                        $(subForm).replaceWith('<p class="alert alert--success">' + data.Message + '</p>');
+                    }
+                });
+
+            });
+        },
+
         checkQueryString: function() {
             var self = this;
             var vars = [],
@@ -216,7 +241,7 @@
                             if (sectorArr.length > 0) {
                                 for (i = 0; i < sectorArr.length; i++) {
                                     if ($.inArray(val.toLowerCase().replace(/\s/g, "_"), sectorArr) > -1) {
-                                        console.log("NONE");
+//                                        console.log("NONE");
                                     } else {
                                         sectorArr.push(val.toLowerCase().replace(/\s/g, "_"));
                                         break;
@@ -248,11 +273,11 @@
                         } else if (filter === "client") {
 
                             //console.log("Add to client");
-                            console.log("Client string: " + clientArr);
+//                            console.log("Client string: " + clientArr);
                             if (clientArr.length > 0) {
                                 for (i = 0; i < clientArr.length; i++) {
                                     if ($.inArray(val.toLowerCase().replace(/\s/g, "_"), clientArr) > -1) {
-                                        console.log("NONE");
+//                                        console.log("NONE");
                                     } else {
                                         clientArr.push(val.toLowerCase().replace(/\s/g, "_").replace(/&/g,"%26"));
                                         break;
@@ -349,9 +374,9 @@
                     } else if (clientArr.length > 0) {
                         link = link + '&' + client + temp.client;
                     }
-                    console.log(client);
+//                    console.log(client);
                     // console.log(temp.client.replace(/&/g,"%26"));
-                    console.log(link);
+//                    console.log(link);
                     // window.location = link;
                 } else {
                     // default no query string, just builds the link and goes
@@ -364,10 +389,11 @@
 
 
                 window.location = link;
-                console.log(link);
+//                console.log(link);
             }
 
-            $(window).load(function() {
+                
+            $(document).ready(function() {
                 $('#sectorSelect').selectOrDie({
                     size: 10,
                     customClass: "sector-select",
@@ -537,6 +563,8 @@
         renderData: function(result) {
             // console.log("called renderData");
             var self = this;
+            var maxHeight = 620;
+
             if (self.$elem.children().eq(temp.insertAfter - 1).length > 0) {
                 self.$elem.children().eq(temp.insertAfter - 1).after(temp.module);
 
@@ -547,12 +575,12 @@
             var tile = $(temp.moduleId);
             tile.html(result);
             tile.children().wrapAll("<div class='module__wrap clearfix'></div>")
-            var maxHeight = 620;
+            
+            maxHeight = $('.module__wrap').height();
 
             // console.log( height );
             // tile.css('max-height', height)
             setTimeout(function() {
-
                 tile.css({
                     'max-height': maxHeight + "px"
                 }).addClass(temp.moduleOpen); // .slideDown("slow");
@@ -561,6 +589,7 @@
 
 
             $("#module-tile img").on('load', function() {
+
                 var height = $('.module__wrap').outerHeight(true);
                 if (height > maxHeight) {
                     tile.css({
@@ -576,6 +605,7 @@
             self.tileSlide();
             self.magnificPopup();
             self.getStats();
+            self.ajaxSubForm();
         },
         updateData: function(result) {
             var self = this;
@@ -606,6 +636,7 @@
             self.tileSlide();
             self.getStats();
             self.magnificPopup();
+            self.ajaxSubForm();
         },
 
         addTiles: function(data) {
@@ -709,7 +740,7 @@
                 link = link + '&' + page + temp.currentPage
             }
 
-            console.log(link);
+//            console.log(link);
 
             history.pushState(null, '', link);
         },
@@ -767,19 +798,27 @@
         },
 
         tileSlide: function() {
+            var totalWidth = 0,
+                stage;
+
             var carousel = $('.tile-slide-js');
             carousel.owlCarousel({
                 items: 1,
                 loop: true,
                 nav: true,
                 dots: true,
+                margin: 5,
                 dotsContainer: ".controls-js",
                 autoplay: true,
                 animateOut: "fadeOut",
-                navText: ['<button class="page page--prev"> <i class="ico-arrow-left"></i> </button>','<button class="page page--next"> <i class="ico-arrow-right"></i> </button>'],
-
-
+                navText: ['<button class="page page--prev"> <i class="ico-arrow-left"></i> </button>','<button class="page page--next"> <i class="ico-arrow-right"></i> </button>']
             });
+
+            if( carousel.length > 0 ) {
+                stage = carousel.find('.owl-stage');
+                totalWidth = $(stage).css('width').replace(/[^-\d\.]/g, '') + 1;
+                stage.css('width', totalWidth);
+            }
         },
         magnificPopup: function() {
             $('.magnific-js').magnificPopup({
@@ -787,7 +826,7 @@
                 type: 'image',
                 closeOnContentClick: false,
                 closeBtnInside: false,
-                mainClass: 'mfp-with-zoom mfp-img-mobile',
+                mainClass: 'mfp-img-mobile',
                 image: {
                     verticalFit: true,
                     titleSrc: function(item) {
@@ -796,15 +835,37 @@
                 },
                 gallery: {
                     enabled: true
-                },
-                zoom: {
-                    enabled: true,
-                    duration: 300, // don't foget to change the duration also in CSS
-                    opener: function(element) {
-                        return element.find('img');
-                    }
                 }
             });
+
+            $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+                disableOn: 700,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+
+                fixedContentPos: false
+            });
+            // console.log('magnific');
+
+            $('.js-modal-form').magnificPopup({
+                type: 'inline',
+                preloader: false,
+                focus: '#fieldName',
+                mainClass: 'mfp-modal',
+                // When elemened is focused, some mobile browsers in some cases zoom in
+                // It looks not nice, so we disable it:
+                callbacks: {
+                    beforeOpen: function() {
+                        if($(window).width() < 700) {
+                            this.st.focus = false;
+                        } else {
+                            this.st.focus = 'input';
+                        }
+                    }
+                }
+        });
         }
 
 

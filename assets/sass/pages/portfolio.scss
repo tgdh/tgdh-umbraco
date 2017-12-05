@@ -3,23 +3,42 @@
 	#HEADER
 
 =========================================================== */
+
+.doc--portfolioitem {
+
+	.tile-slide {
+		border-color: #fff;
+	}
+
+}
+
+.portfolio-tile__heading {
+	font-size: 2rem;
+}
+
+@include respond-min( $mq-large ) {
+
+	.portfolio-tile__heading {
+		font-size: 2.6rem;
+	}	
+
+}
+
 .portfolio-tile__heading,
 .portfolio-tile__subheading {
-	color: $dark--5;
+	color: #fff;
+	-webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+   	backface-visibility: hidden;
 }
+
 
 .portfolio-tile__subheading {
 	font-size: 1.4rem;
 }
 
-.mfp-counter {
-	display: none;
-}
-
 .gallery__image:hover {
 	cursor: -webkit-zoom-in;
 }
-
 
 .controls-js {
 	text-align: right;
@@ -28,36 +47,167 @@
 .portfolio-tile {
 	position: relative;
 }
+
+.mfp-counter {
+	display: none;
+}
+
+
+.portfolio-tile__wrap {
+	color: #fff;
+	position: absolute;
+	display: block;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	padding: 10%;
+}
+
+.button--load {
+	width: 100%;
+	display: block;
+	border-radius: 0;
+	background-color: $yellow--1;
+	transition: color $speed ease, background $speed ease;
+
+	&:hover {
+		color: #fff;
+		background-color: $dark--1;
+	}
+
+	&:focus {
+		color: $dark--5;
+		background-color: $yellow--1;
+	}
+}
+
+.no-rgba.no-touch {
+
+	.portfolio-tile:hover:before {
+		background: url(/assets/img/transparent-black.png) repeat;
+	}
+
+}
+
+.no-touch {
+
+	.portfolio-tile {
+
+		&:before {
+			content: "";
+			background: transparent;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			transition: background $speed ease;
+		}
+
+		&:hover:before {
+			background: rgba(0,0,0,0.5);
+		}
+
+	}
+
+	.portfolio-tile__wrap {
+		top: 50%;
+		transform: translateY( -50% );
+	}
+
+	.portfolio-tile__heading,
+	.portfolio-tile__subheading {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	.portfolio-tile__heading {
+		transform: scale(.7);
+		transition: opacity .5s ease, 
+					visibility .5s ease, 
+					transform .4s ease;
+	}
+
+	.portfolio-tile__subheading {
+		transform: scale(.8);
+		transition: opacity .5s ease .2s, 
+					visibility .5s ease .2s, 
+					transform .8s ease .2s;
+	}
+
+	.portfolio-tile:hover {
+
+		.portfolio-tile__heading,
+		.portfolio-tile__subheading {
+			opacity: 1;
+			visibility: visible;
+			transform: translate(0) scale(1);
+		}
+
+	}
+
+}
+
+.touch {
+
+	.portfolio-tile__heading {
+		font-size: 1.8rem;
+		text-align: left;
+		padding-bottom: 0;
+		margin-bottom: 1rem;
+	}
+
+	.portfolio-tile__subheading {
+		line-height: 1;
+		text-align: left;
+	}
+
+	.portfolio-tile__wrap {
+		bottom: 0;
+		padding: 1rem;
+		min-height: 10rem;
+		background: rgba(0,0,0,.6);
+	}
+
+	.portfolio-tile:before {
+		opacity: .5;
+	}
+
+}
+
+/*
+.portfolio-tile {
+
+	.portfolio-tile__heading,
+	.portfolio-tile__subheading {
+		color: #fff;
+	}
+
+}
+
 .touch {
 	.portfolio-tile__wrap {
-		position: absolute;
-		display: block;
 		bottom: 0;
-		left: 0;
-		right: 0;
 		background: rgba(0,0,0,.5);
 		font-size: 2rem;
-		/* height: 3rem; */
-		padding: 0;
 		margin: 0;
-		z-index: 11;
 		padding: 1rem;
-		color: white;
 	}	
 }
 
 .no-touch {
 
 	.portfolio-tile__wrap {
-		position: absolute; 
+		max-width: 80%;
 		margin: 0 auto;
-		margin-top: 40%;
-		color: white;
+		top: 50%;
 		width: 100%;
 		text-align: center;
 		z-index: 10;
 		padding-left: 2rem;
 		padding-right: 2rem;
+		transform: translateY( -50% );
 	}
 
 	.portfolio-tile:before {
@@ -69,6 +219,7 @@
 		left: 0;
 		right: 0;
 		background: #c8d1d0;
+		background: #000;
 		opacity: 0;
 		z-index: 1;
 		transition: opacity $speed ease;
@@ -76,8 +227,10 @@
 
 
 	.portfolio-tile:hover:before {
-		opacity: 0.7;
+		opacity: 0.4;
 	}
+
+/*	
 	.portfolio-tile__heading {
 		opacity: 0;
 		font-size: 2rem;
@@ -105,6 +258,8 @@
 		transform: scale(1.1);
 		-webkit-backface-visibility: hidden;
 	}
+*/
+
 /*	.portfolio-tile__wrap {
 		position: absolute;
 		display: block;
@@ -131,16 +286,29 @@
 	.tile__image:hover > .portfolio-tile__wrap {
 		transform: translateY(0rem);
 		opacity: 1;
-	}*/
+	}
 
 	
 }
+*/
+
 .sod_select {
 	cursor: pointer;
 }
+
+.tile-slide--wrap {
+	position: relative;
+}
+
+.carousel__controls {
+	position: absolute;
+	right: 0;
+}
+
 .tile-slide {
 	border: 1rem solid #f6f6f6;
 	border-radius: 0.5rem;
+	background-color: #f6f6f6;
 }
 
 .module-title {
@@ -162,12 +330,14 @@
 }
 
 .sector-button {
+	font-size: 1.4rem;
 	position: relative;
 	border-color: $green--1;
 	padding-right: 6rem;
 	margin-bottom: 1rem;
 	margin-right: 1rem;
-	text-transform:capitalize;
+	font-weight: 700;
+	text-transform: uppercase;
 	.ico-cross {
 		transition: background $speed ease, border $speed ease, color $speed ease;
 		background: $green--1;
@@ -246,12 +416,14 @@
 }
 
 .category-button {
+	font-size: 1.4rem;
 	position: relative;
 	border-color: $pink--1;
 	padding-right: 6rem;
 	margin-bottom: 1rem;
 	margin-right: 1rem;
-	text-transform:capitalize;
+	font-weight: 700;
+	text-transform: uppercase;
 	.ico-cross {
 		transition: background $speed ease, border $speed ease, color $speed ease;
 		background: $pink--1;
@@ -259,12 +431,14 @@
 }
 
 .client-button {
+	font-size: 1.4rem;
 	position: relative;
 	border-color: $yellow--1;
 	padding-right: 6rem;
 	margin-bottom: 1rem;
 	margin-right: 1rem;
-	text-transform:capitalize;
+	font-weight: 700;
+	text-transform: uppercase;
 	.ico-cross {
 		transition: background $speed ease, border $speed ease, color $speed ease;
 		background: $yellow--1;
@@ -293,7 +467,10 @@
 		/* line-height: 0; */
 		width: 4rem;
 		&:before {
-			line-height: 3.6rem;
+			position: absolute;
+			top: 50%;
+			margin-top: -1rem;
+			right: 1rem;
 			font-weight: bold;
 			font-size: 2rem;
 		}
@@ -313,6 +490,7 @@
 
 .filter--wrap {
 	margin-bottom: 2rem;
+	
 }
 
 .active-filters {
@@ -327,11 +505,10 @@
 .portfolio-filter--l {
 	background: rgba($blue--1, 1);
 	color: white;
-	z-index: 1;
+	z-index: 20;
 	overflow: hidden;
 	height: 0;
-
-
+	position: relative;
 }
 
 
@@ -424,21 +601,6 @@
 	overflow: hidden;
 }
 
-.tile__image {
-	transition: all 0.6s linear;
-	transform: scale(1.01);
-}
-
-.tile__image:hover {
-	transform: scale(1.03);
-}
-
-* {
-	box-sizing: border-box;
-	outline: none;
-}
-
-
 .stats {
 	display: none;
 	position: fixed;
@@ -476,34 +638,35 @@
 	position: relative;
 }
 
-.tile-open:after {
+.tile-open:after,
+.tile-close:after {
+	content: "";
 	border: solid transparent;
-	content: attr(data-content) ' ';
 	height: 0;
 	width: 0;
 	position: absolute;
+	left: 50%;
+	bottom: -5px;
+	margin-left: -3rem;
+	transform: translate3D( 0, 6rem, 0 );
+
 	pointer-events: none;
 	border-bottom-color: #e8e8e8;
 	border-width: 3rem;
-	transition: all 0.5s ease;
-	animation: popIn 1s;
-	animation-fill-mode: forwards; 
 	z-index: 0;
+
+	animation-duration: 1s;
+	animation-fill-mode: forwards; 
+}
+
+.tile-open:after {
+	transform: translate3D( 0, 6rem, 0 );
+	animation-name: popIn; 
 }
 
 .tile-close:after {
-	border: solid transparent;
-	content: attr(data-content) ' ';
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-bottom-color: white;
-	border-width: 3rem;
-	transition: all 0.5s ease;
-	animation: popOut 1s;
-	animation-fill-mode: forwards; 
-	z-index: 0;
+	transform: translate3D( 0, 0, 0 );
+	animation-name: popOut;
 }
 
 .large-tile {
@@ -515,12 +678,13 @@
 	max-height: 0;
 	overflow: hidden;
 	z-index: 2;
+	transform: translate3D(0,0,0);
 	transition: max-height 0.6s ease;
 }
 
 .module__wrap {
 	padding-top: 8rem;
-	padding-bottom: 10rem;
+	padding-bottom: 8rem;
 	padding-left: 2rem;
 	padding-right: 2rem;
 /*	min-height: 50rem;*/
@@ -588,31 +752,25 @@
 
 @keyframes popIn {
   0% {
-  	display: block;
-    transform: translate3D(-30px, 0px, 0);
+  	transform: translate3D( 0, 6rem, 0 );
   }
   30% {
-  	display: block;
-    transform: translate3D(-30px, -60px, 0);
+    transform: translate3D(0, -5px, 0);
   }
   100% {
-  	display: block;
-  	transform: translate3D(-30px, -55px, 0);
+  	transform: translate3D(0, 0, 0);
   }
 }
 
 @keyframes popOut {
   0% {
-  	display: block;
-    transform: translate3D(-30px, -55px, 0);
+    transform: translate3D(0, 0, 0);
   }
   30% {
-  	display: block;
-    transform: translate3D(-30px, -60px, 0);
+    transform: translate3D(0, -5px, 0);
   }
   100% {
-  	display: block;
-  	transform: translate3D(-30px, 0px, 0);
+  	transform: translate3D( 0, 6rem, 0 );
   }
 }
 
@@ -655,17 +813,13 @@
 @include respond-min( $mq-medium ) {
 
 	.portfolio-tile {
-		width: 33.333333%;
+		width: 25%;
 	}
 
 
 }
 
 @include respond-min( $mq-large ) {
-
-	.portfolio-tile {
-		width: 25%;
-	}
 
 	.module-title {
 		font-weight: normal;
@@ -678,7 +832,7 @@
 @include respond-min( $mq-x-large ) {
 
 	.portfolio-tile {
-		width: 20%;
+		width: 16.6666666667%;
 	}
 
 
